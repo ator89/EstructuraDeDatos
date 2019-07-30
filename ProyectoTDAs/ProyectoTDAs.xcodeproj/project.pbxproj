@@ -42,7 +42,7 @@
 		0B54FC8222F0F32400B73D08 /* Nodo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo.cpp; sourceTree = "<group>"; };
 		0B54FC8322F0F32400B73D08 /* Nodo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nodo.h; sourceTree = "<group>"; };
 		0B54FC8522F0F71F00B73D08 /* Alumno.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Alumno.cpp; sourceTree = "<group>"; };
-		0B54FC8622F0F71F00B73D08 /* Alumno.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Alumno.hpp; sourceTree = "<group>"; };
+		0B54FC8622F0F71F00B73D08 /* Alumno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alumno.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				0B54FC8222F0F32400B73D08 /* Nodo.cpp */,
 				0B54FC8322F0F32400B73D08 /* Nodo.h */,
 				0B54FC8522F0F71F00B73D08 /* Alumno.cpp */,
-				0B54FC8622F0F71F00B73D08 /* Alumno.hpp */,
+				0B54FC8622F0F71F00B73D08 /* Alumno.h */,
 			);
 			path = ProyectoTDAs;
 			sourceTree = "<group>";
