@@ -6,9 +6,9 @@
 //  Copyright © 2019 Angel Torres. All rights reserved.
 //
 
-#ifndef ArrayList_hpp
-#define ArrayList_hpp
+#ifndef ARRAYLIST_H
+#define ARRAYLIST_H
 
 #include <stdio.h>
 
-#endif /* ArrayList_hpp */
+#endif

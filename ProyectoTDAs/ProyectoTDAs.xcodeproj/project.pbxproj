@@ -48,7 +48,7 @@
 		0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Simbolo.cpp; sourceTree = "<group>"; };
 		0B54FC8922F0FADA00B73D08 /* Simbolo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Simbolo.h; sourceTree = "<group>"; };
 		0B54FC8B22F0FEEC00B73D08 /* ArrayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayList.cpp; sourceTree = "<group>"; };
-		0B54FC8C22F0FEEC00B73D08 /* ArrayList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayList.hpp; sourceTree = "<group>"; };
+		0B54FC8C22F0FEEC00B73D08 /* ArrayList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayList.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */,
 				0B54FC8922F0FADA00B73D08 /* Simbolo.h */,
 				0B54FC8B22F0FEEC00B73D08 /* ArrayList.cpp */,
-				0B54FC8C22F0FEEC00B73D08 /* ArrayList.hpp */,
+				0B54FC8C22F0FEEC00B73D08 /* ArrayList.h */,
 			);
 			path = ProyectoTDAs;
 			sourceTree = "<group>";
