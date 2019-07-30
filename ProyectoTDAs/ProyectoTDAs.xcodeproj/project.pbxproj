@@ -15,6 +15,7 @@
 		0B54FC8422F0F32400B73D08 /* Nodo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8222F0F32400B73D08 /* Nodo.cpp */; };
 		0B54FC8722F0F71F00B73D08 /* Alumno.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8522F0F71F00B73D08 /* Alumno.cpp */; };
 		0B54FC8A22F0FADA00B73D08 /* Simbolo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */; };
+		0B54FC8D22F0FEEC00B73D08 /* ArrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8B22F0FEEC00B73D08 /* ArrayList.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		0B54FC8622F0F71F00B73D08 /* Alumno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alumno.h; sourceTree = "<group>"; };
 		0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Simbolo.cpp; sourceTree = "<group>"; };
 		0B54FC8922F0FADA00B73D08 /* Simbolo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Simbolo.h; sourceTree = "<group>"; };
+		0B54FC8B22F0FEEC00B73D08 /* ArrayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayList.cpp; sourceTree = "<group>"; };
+		0B54FC8C22F0FEEC00B73D08 /* ArrayList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayList.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				0B54FC8622F0F71F00B73D08 /* Alumno.h */,
 				0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */,
 				0B54FC8922F0FADA00B73D08 /* Simbolo.h */,
+				0B54FC8B22F0FEEC00B73D08 /* ArrayList.cpp */,
+				0B54FC8C22F0FEEC00B73D08 /* ArrayList.hpp */,
 			);
 			path = ProyectoTDAs;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B54FC8D22F0FEEC00B73D08 /* ArrayList.cpp in Sources */,
 				0B54FC7822F0F1F600B73D08 /* Object.cpp in Sources */,
 				0B54FC8A22F0FADA00B73D08 /* Simbolo.cpp in Sources */,
 				0B54FC7B22F0F23400B73D08 /* TDALista.cpp in Sources */,
