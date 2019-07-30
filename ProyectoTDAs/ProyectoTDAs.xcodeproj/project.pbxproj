@@ -18,6 +18,7 @@
 		0B54FC8D22F0FEEC00B73D08 /* ArrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8B22F0FEEC00B73D08 /* ArrayList.cpp */; };
 		0B54FC9022F0FFB200B73D08 /* LinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8E22F0FFB200B73D08 /* LinkedList.cpp */; };
 		0B54FC9322F1008D00B73D08 /* ArrayStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC9122F1008D00B73D08 /* ArrayStack.cpp */; };
+		0B54FC9622F1010700B73D08 /* LinkedStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC9422F1010700B73D08 /* LinkedStack.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,8 @@
 		0B54FC8F22F0FFB200B73D08 /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		0B54FC9122F1008D00B73D08 /* ArrayStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayStack.cpp; sourceTree = "<group>"; };
 		0B54FC9222F1008D00B73D08 /* ArrayStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayStack.h; sourceTree = "<group>"; };
+		0B54FC9422F1010700B73D08 /* LinkedStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedStack.cpp; sourceTree = "<group>"; };
+		0B54FC9522F1010700B73D08 /* LinkedStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedStack.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				0B54FC7722F0F1F600B73D08 /* Object.h */,
 				0B54FC7922F0F23400B73D08 /* TDALista.cpp */,
 				0B54FC7A22F0F23400B73D08 /* TDALista.h */,
+				0B54FC9422F1010700B73D08 /* LinkedStack.cpp */,
+				0B54FC9522F1010700B73D08 /* LinkedStack.h */,
 				0B54FC7C22F0F26800B73D08 /* TDAPila.cpp */,
 				0B54FC7D22F0F26800B73D08 /* TDAPila.h */,
 				0B54FC8222F0F32400B73D08 /* Nodo.cpp */,
@@ -169,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B54FC8D22F0FEEC00B73D08 /* ArrayList.cpp in Sources */,
+				0B54FC9622F1010700B73D08 /* LinkedStack.cpp in Sources */,
 				0B54FC7822F0F1F600B73D08 /* Object.cpp in Sources */,
 				0B54FC9322F1008D00B73D08 /* ArrayStack.cpp in Sources */,
 				0B54FC9022F0FFB200B73D08 /* LinkedList.cpp in Sources */,
