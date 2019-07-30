@@ -14,6 +14,7 @@
 		0B54FC8122F0F2D700B73D08 /* TDACola.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC7F22F0F2D700B73D08 /* TDACola.cpp */; };
 		0B54FC8422F0F32400B73D08 /* Nodo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8222F0F32400B73D08 /* Nodo.cpp */; };
 		0B54FC8722F0F71F00B73D08 /* Alumno.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8522F0F71F00B73D08 /* Alumno.cpp */; };
+		0B54FC8A22F0FADA00B73D08 /* Simbolo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		0B54FC8322F0F32400B73D08 /* Nodo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nodo.h; sourceTree = "<group>"; };
 		0B54FC8522F0F71F00B73D08 /* Alumno.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Alumno.cpp; sourceTree = "<group>"; };
 		0B54FC8622F0F71F00B73D08 /* Alumno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Alumno.h; sourceTree = "<group>"; };
+		0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Simbolo.cpp; sourceTree = "<group>"; };
+		0B54FC8922F0FADA00B73D08 /* Simbolo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Simbolo.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				0B54FC8322F0F32400B73D08 /* Nodo.h */,
 				0B54FC8522F0F71F00B73D08 /* Alumno.cpp */,
 				0B54FC8622F0F71F00B73D08 /* Alumno.h */,
+				0B54FC8822F0FADA00B73D08 /* Simbolo.cpp */,
+				0B54FC8922F0FADA00B73D08 /* Simbolo.hpp */,
 			);
 			path = ProyectoTDAs;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B54FC7822F0F1F600B73D08 /* Object.cpp in Sources */,
+				0B54FC8A22F0FADA00B73D08 /* Simbolo.cpp in Sources */,
 				0B54FC7B22F0F23400B73D08 /* TDALista.cpp in Sources */,
 				0B54FC8722F0F71F00B73D08 /* Alumno.cpp in Sources */,
 				0B54FC8122F0F2D700B73D08 /* TDACola.cpp in Sources */,
