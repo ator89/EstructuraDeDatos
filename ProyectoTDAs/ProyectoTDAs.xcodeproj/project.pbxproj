@@ -63,7 +63,7 @@
 		0B54FC9722F1017000B73D08 /* ArrayQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayQueue.cpp; sourceTree = "<group>"; };
 		0B54FC9822F1017000B73D08 /* ArrayQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayQueue.h; sourceTree = "<group>"; };
 		0B54FC9A22F101D500B73D08 /* LinkedQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedQueue.cpp; sourceTree = "<group>"; };
-		0B54FC9B22F101D500B73D08 /* LinkedQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedQueue.hpp; sourceTree = "<group>"; };
+		0B54FC9B22F101D500B73D08 /* LinkedQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedQueue.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 				0B54FC8E22F0FFB200B73D08 /* LinkedList.cpp */,
 				0B54FC8F22F0FFB200B73D08 /* LinkedList.h */,
 				0B54FC9A22F101D500B73D08 /* LinkedQueue.cpp */,
-				0B54FC9B22F101D500B73D08 /* LinkedQueue.hpp */,
+				0B54FC9B22F101D500B73D08 /* LinkedQueue.h */,
 			);
 			path = ProyectoTDAs;
 			sourceTree = "<group>";
