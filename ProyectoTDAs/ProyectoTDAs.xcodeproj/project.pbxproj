@@ -20,6 +20,7 @@
 		0B54FC9322F1008D00B73D08 /* ArrayStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC9122F1008D00B73D08 /* ArrayStack.cpp */; };
 		0B54FC9622F1010700B73D08 /* LinkedStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC9422F1010700B73D08 /* LinkedStack.cpp */; };
 		0B54FC9922F1017000B73D08 /* ArrayQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC9722F1017000B73D08 /* ArrayQueue.cpp */; };
+		0B54FC9C22F101D500B73D08 /* LinkedQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC9A22F101D500B73D08 /* LinkedQueue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,8 @@
 		0B54FC9522F1010700B73D08 /* LinkedStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedStack.h; sourceTree = "<group>"; };
 		0B54FC9722F1017000B73D08 /* ArrayQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayQueue.cpp; sourceTree = "<group>"; };
 		0B54FC9822F1017000B73D08 /* ArrayQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayQueue.h; sourceTree = "<group>"; };
+		0B54FC9A22F101D500B73D08 /* LinkedQueue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedQueue.cpp; sourceTree = "<group>"; };
+		0B54FC9B22F101D500B73D08 /* LinkedQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedQueue.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				0B54FC8C22F0FEEC00B73D08 /* ArrayList.h */,
 				0B54FC8E22F0FFB200B73D08 /* LinkedList.cpp */,
 				0B54FC8F22F0FFB200B73D08 /* LinkedList.h */,
+				0B54FC9A22F101D500B73D08 /* LinkedQueue.cpp */,
+				0B54FC9B22F101D500B73D08 /* LinkedQueue.hpp */,
 			);
 			path = ProyectoTDAs;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			files = (
 				0B54FC8D22F0FEEC00B73D08 /* ArrayList.cpp in Sources */,
 				0B54FC9622F1010700B73D08 /* LinkedStack.cpp in Sources */,
+				0B54FC9C22F101D500B73D08 /* LinkedQueue.cpp in Sources */,
 				0B54FC7822F0F1F600B73D08 /* Object.cpp in Sources */,
 				0B54FC9322F1008D00B73D08 /* ArrayStack.cpp in Sources */,
 				0B54FC9022F0FFB200B73D08 /* LinkedList.cpp in Sources */,
