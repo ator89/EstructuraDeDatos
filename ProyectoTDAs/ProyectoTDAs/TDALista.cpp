@@ -7,3 +7,5 @@
 //
 
 #include "TDALista.h"
+
+TDALista::~TDALista(){}
