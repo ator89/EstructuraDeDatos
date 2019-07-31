@@ -31,7 +31,9 @@ void Simbolo::setSimbolo(char simbolo){
 
 //Métodos polimórficos
 std::string Simbolo::toString(){
-    return "";
+    std::string retval;
+    retval.push_back(simbolo);
+    return retval;
 }
 bool Simbolo::equals(Object* info){
     return false;

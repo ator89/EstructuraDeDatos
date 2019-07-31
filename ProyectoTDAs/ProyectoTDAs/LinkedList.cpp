@@ -68,9 +68,9 @@ bool LinkedList::vaciar(Object*){
 }
 
 //Métodos polimórficos heredados de Object
-std::string toString(){
+std::string LinkedList::toString(){
     return "";
 }
-bool equals(Object*){
+bool LinkedList::equals(Object*){
     return false;
 }

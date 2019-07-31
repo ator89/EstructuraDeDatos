@@ -15,11 +15,12 @@
 
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
     TDALista* listaEnlazada = new LinkedList();
     listaEnlazada->insertar(new Simbolo('$'), 1);
     
+    std::cout << listaEnlazada->toString();
     
+    delete listaEnlazada;
     return 0;
 }
