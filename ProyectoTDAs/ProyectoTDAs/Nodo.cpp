@@ -33,3 +33,28 @@ Nodo::~Nodo(){
 }
 
 //Accesores
+Object* Nodo::getData(){
+    return data;
+}
+
+Nodo* Nodo::getNext(){
+    return next;
+}
+
+Nodo* Nodo::getPrevious(){
+    return previous;
+}
+
+//Mutadores
+void Nodo::setData(Object* data){
+    this->data = data;
+}
+
+void Nodo::setNext(Nodo* siguiente){
+    next = siguiente;
+}
+
+void Nodo::setPrevious(Nodo* anterior){
+    previous = anterior;
+}
+
