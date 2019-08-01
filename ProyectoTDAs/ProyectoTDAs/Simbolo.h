@@ -10,6 +10,7 @@
 #define SIMBOLO_H
 
 #include <string>
+#include <sstream>
 #include "Object.h"
 
 class Simbolo:public Object{

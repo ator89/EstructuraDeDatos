@@ -8,6 +8,7 @@
 
 #include "LinkedList.h"
 #include "Alumno.h"
+#include <iostream>
 
 //Constructor y destructor
 LinkedList::LinkedList(){
@@ -18,31 +19,48 @@ LinkedList::~LinkedList(){
         delete head;
 }
 
-//Métodos administración de la lista
+//Crear un nuevo nodo
+Nodo* LinkedList::getNewNode(Object* data){
+    Nodo* nodo = new Nodo();
+    nodo->setData(data);
+    nodo->setPrevious(nullptr);
+    nodo->setNext(nullptr);
+    return nodo;
+}
+
+//Insertar elemento en cualquier posición de la lista
 void LinkedList::insertar(Object* data,int pos){
-    Nodo* temp1 = new Nodo();
-    temp1->setData(data);
-    temp1->setNext(nullptr);
-    temp1->setPrevious(nullptr);
+    Nodo* temp1 = getNewNode(data);
     if(head == NULL){
+        head = temp1;
         return;
     }
     else if(pos == 1){
-        temp1->setNext(head);
         head->setPrevious(temp1);
+        temp1->setNext(head);
         head = temp1;
         return;
     }else{
+        Nodo* temp2 = head;
         for(int i = 0; i < pos-2; i++){
             temp1 = temp1->getNext();
         }
-        Nodo* temp2 = temp1->getNext();
-        temp1->setNext(temp2->getNext());
+        Nodo* temp3 = temp2->getNext();
+        temp1->setNext(temp3);
         temp2->setNext(temp1);
+        temp1->setPrevious(temp2);
+        temp3->setPrevious(temp1);
     }
 }
 
-void LinkedList::imprimir(Object* lista){}
+//Imprimir valores de la lista
+void LinkedList::imprimir(){
+    Nodo* temp = head;
+    while(temp != NULL){
+        std::cout << temp->getData()->toString();
+        temp = temp->getNext();
+    }
+}
 
 bool LinkedList::buscar(Object* elemento){
     return false;
@@ -53,23 +71,51 @@ bool LinkedList::borrar(Object*){
 bool LinkedList::isEmpty(){
     return false;
 }
+
 Object* LinkedList::posicion(int n){
-    Object* temp = new Alumno();
-    return temp;
+    Nodo* temp = head;
+    temp = temp->getNext();
+    Object* retval = temp->getData();
+    
+    return retval;
 }
-Object* LinkedList::anterior(Object* anterior){
-    return anterior;
+
+Object* LinkedList::top(){
+    if(head == 0)
+        return 0;
+    else
+        return head->getData();
 }
-Object* LinkedList::siguiente(Object* siguiente){
-    return siguiente;
+
+//Devolver el valor anterior
+Object* LinkedList::anterior(){
+    if(head == 0)
+        return 0;
+    else
+        return head->getPrevious()->getData();
 }
+
+//Retornar el valor siguiente
+Object* LinkedList::siguiente(){
+    if(head == 0)
+        return 0;
+    else
+        return head->getNext()->getData();
+}
+
 bool LinkedList::vaciar(Object*){
     return false;
 }
 
 //Métodos polimórficos heredados de Object
 std::string LinkedList::toString(){
-    return "";
+    Nodo* tmp = head;
+    std::string s;
+    while(tmp != nullptr){
+        s+=tmp->getData()->toString();
+        tmp = tmp->getNext();
+    }
+    return s;
 }
 bool LinkedList::equals(Object*){
     return false;
