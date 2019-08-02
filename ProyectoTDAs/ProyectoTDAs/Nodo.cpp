@@ -24,12 +24,17 @@ Nodo::Nodo(Object* data){
 
 //Destructor
 Nodo::~Nodo(){
-    if(next)
-        delete next;
-    if(previous)
-        delete previous;
+    //if(next)
+    //    delete next;
+    //if(previous)
+    //   delete previous;
     if(data)
         delete data;
+    Nodo* temp1 = next;
+    while(temp1 != 0){
+        temp1 = temp1->getNext();
+        delete temp1;
+    }
 }
 
 //Accesores

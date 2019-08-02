@@ -14,6 +14,7 @@
 LinkedList::LinkedList(){
     head = NULL;
 }
+
 LinkedList::~LinkedList(){
     if(head)
         delete head;
@@ -60,6 +61,7 @@ void LinkedList::imprimir(){
         std::cout << temp->getData()->toString();
         temp = temp->getNext();
     }
+    std::cout<< "\n";
 }
 
 bool LinkedList::buscar(Object* elemento){
@@ -80,8 +82,11 @@ Object* LinkedList::posicion(int n){
     return retval;
 }
 
+//Obtener valor de inicio
 Object* LinkedList::top(){
     if(head == 0)
+        return 0;
+    else if(head->getNext() == 0)
         return 0;
     else
         return head->getData();
@@ -90,6 +95,8 @@ Object* LinkedList::top(){
 //Devolver el valor anterior
 Object* LinkedList::anterior(){
     if(head == 0)
+        return 0;
+    else if(head->getPrevious() == 0)
         return 0;
     else
         return head->getPrevious()->getData();

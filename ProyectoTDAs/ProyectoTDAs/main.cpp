@@ -26,6 +26,7 @@ int main(int argc, const char * argv[]) {
     
     //std::cout << listaEnlazada->toString();
     listaEnlazada->imprimir();
+    std::cout << std::endl;
     
     //Object* tmp = listaEnlazada->top();
     //std::cout << tmp->toString();
