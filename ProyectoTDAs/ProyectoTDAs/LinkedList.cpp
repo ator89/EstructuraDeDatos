@@ -18,6 +18,7 @@ LinkedList::LinkedList(){
 LinkedList::~LinkedList(){
     if(head)
         delete head;
+
 }
 
 //Crear un nuevo nodo
