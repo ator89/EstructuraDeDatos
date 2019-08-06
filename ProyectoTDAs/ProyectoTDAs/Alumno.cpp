@@ -39,7 +39,11 @@ void Alumno::setNombre(std::string nombre){
 
 //métodos polimórficos
 std::string Alumno::toString(){
-    return "";
+    std::string s;
+    std::stringstream ss;
+    ss << nombre << cuenta;
+    ss >> s ;
+    return s;
 }
 
 bool Alumno::equals(Object* info){

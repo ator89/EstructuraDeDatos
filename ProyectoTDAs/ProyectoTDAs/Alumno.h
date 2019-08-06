@@ -9,6 +9,7 @@
 #ifndef ALUMNO_H
 #define ALUMNO_H
 #include <string>
+#include <sstream>
 #include "Object.h"
 
 class Alumno:public Object{
