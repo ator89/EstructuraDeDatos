@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
     listaEnlazada->insertar(new Simbolo('$'), 1);
     listaEnlazada->insertar(new Simbolo('&'), 1);
     listaEnlazada->insertar(new Simbolo('('), 1);
-    listaEnlazada->insertar(new Alumno("hola","dos"), 1);
+    listaEnlazada->insertar(new Alumno("nombre","cuenta"), 1);
     
     //std::cout << listaEnlazada->toString();
     listaEnlazada->imprimir();

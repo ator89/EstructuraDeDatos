@@ -7,3 +7,5 @@
 //
 
 #include "TDACola.h"
+
+TDACola::~TDACola(){}
