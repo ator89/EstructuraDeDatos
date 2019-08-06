@@ -7,3 +7,5 @@
 //
 
 #include "TDAPila.h"
+
+TDAPila::~TDAPila(){}
