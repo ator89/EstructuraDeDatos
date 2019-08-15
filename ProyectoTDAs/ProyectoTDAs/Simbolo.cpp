@@ -13,10 +13,12 @@ Simbolo::Simbolo(){
     simbolo = ' ';
 }
 
+//Constructor sobrecargado
 Simbolo::Simbolo(char simbolo){
     this->simbolo = simbolo;
 }
 
+//Destructor
 Simbolo::~Simbolo(){}
 
 //Accesor
@@ -35,6 +37,8 @@ std::string Simbolo::toString(){
     s.push_back(simbolo);
     return s;
 }
+
+
 bool Simbolo::equals(Object* obj){
     if(obj == NULL)
         return false;
