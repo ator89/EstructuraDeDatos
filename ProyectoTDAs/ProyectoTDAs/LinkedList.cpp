@@ -16,10 +16,10 @@ LinkedList::LinkedList(){
     size = 0;
 }
 
+//Destructor
 LinkedList::~LinkedList(){
     if(head)
         delete head;
-
 }
 
 //Crear un nuevo nodo
@@ -36,23 +36,24 @@ void LinkedList::insertar(Object* data,int pos){
     Nodo* temp1 = getNewNode(data);
     if(head == NULL){
         head = temp1;
+        size++;
         return;
     }
     else if(pos == 1){
         head->setPrevious(temp1);
         temp1->setNext(head);
         head = temp1;
+        size++;
         return;
     }else{
         Nodo* temp2 = head;
         for(int i = 0; i < pos-2; i++){
-            temp1 = temp1->getNext();
+            temp2 = temp2->getNext();
         }
-        Nodo* temp3 = temp2->getNext();
-        temp1->setNext(temp3);
+        temp1->setNext(temp2->getNext()->getPrevious());
+        temp2->getNext()->setPrevious(temp1->getNext());
         temp2->setNext(temp1);
-        temp1->setPrevious(temp2);
-        temp3->setPrevious(temp1);
+        size++;
     }
 }
 
