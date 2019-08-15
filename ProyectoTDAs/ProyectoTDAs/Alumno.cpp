@@ -46,6 +46,13 @@ std::string Alumno::toString(){
     return s;
 }
 
-bool Alumno::equals(Object* info){
-    return false;
+bool Alumno::equals(Object* obj){
+    if(obj == NULL)
+        return false;
+    else if(typeid(*obj)==typeid(Alumno)){
+        Alumno* temp = dynamic_cast<Alumno*>(obj);
+        return temp->getNombre() == nombre;
+    }else{
+        return false;
+    }
 }
