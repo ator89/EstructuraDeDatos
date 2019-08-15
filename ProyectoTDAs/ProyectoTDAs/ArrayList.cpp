@@ -28,6 +28,56 @@ ArrayList::~ArrayList()
     delete[] array;
 }
 
+//Insertar en posición n
+void ArrayList::insertar(Object* data, int pos){
+    if(size==capacity){//revisar si hay capacidad para el elemento
+        resize();
+    }
+    for(int i = size-1; i>=pos; i--)
+        array[i+1] = array[i];
+    array[pos] = data;
+    size++;
+}
+
+//Imprimir valores de la lista
+void ArrayList::imprimir(){}
+
+Object* ArrayList::buscar(Object* data){
+    Object* retval;
+    return retval;
+}
+
+Object* ArrayList::borrar(int pos){
+    Object* retval;
+    return retval;
+}
+
+Object* ArrayList::posicion(int pos){
+    Object* retval;
+    return retval;
+}
+
+Object* ArrayList::anterior(int pos){
+    Object* retval;
+    return retval;
+}
+
+Object* ArrayList::siguiente(int pos){
+    Object* retval;
+    return retval;
+}
+
+//Verificar si no está vacía
+bool ArrayList::isEmpty(){
+    return false;
+    //si no está vacía, imprimir elementos
+}
+
+//Vaciar la lista
+bool ArrayList::vaciar(){
+    return false;
+}
+
 
 /*aumenta la capacidad del arreglo*/
 void ArrayList::resize(){
