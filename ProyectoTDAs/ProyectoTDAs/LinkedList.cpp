@@ -13,6 +13,7 @@
 //Constructor y destructor
 LinkedList::LinkedList(){
     head = NULL;
+    size = 0;
 }
 
 LinkedList::~LinkedList(){
@@ -65,11 +66,13 @@ void LinkedList::imprimir(){
     std::cout<< "\n";
 }
 
-bool LinkedList::buscar(Object* elemento){
-    return false;
+Object* LinkedList::buscar(Object* elemento){
+    Object* retval;
+    return retval;
 }
-bool LinkedList::borrar(Object*){
-    return false;
+Object* LinkedList::borrar(int pos){
+    Object* retval;
+    return retval;
 }
 bool LinkedList::isEmpty(){
     return false;
@@ -83,18 +86,8 @@ Object* LinkedList::posicion(int n){
     return retval;
 }
 
-//Obtener valor de inicio
-Object* LinkedList::top(){
-    if(head == 0)
-        return 0;
-    else if(head->getNext() == 0)
-        return 0;
-    else
-        return head->getData();
-}
-
 //Devolver el valor anterior
-Object* LinkedList::anterior(){
+Object* LinkedList::anterior(int pos){
     if(head == 0)
         return 0;
     else if(head->getPrevious() == 0)
@@ -104,14 +97,14 @@ Object* LinkedList::anterior(){
 }
 
 //Retornar el valor siguiente
-Object* LinkedList::siguiente(){
+Object* LinkedList::siguiente(int pos){
     if(head == 0)
         return 0;
     else
         return head->getNext()->getData();
 }
 
-bool LinkedList::vaciar(Object*){
+bool LinkedList::vaciar(){
     return false;
 }
 

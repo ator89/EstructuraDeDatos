@@ -17,23 +17,22 @@ class LinkedList:public TDALista{
 private:
     Nodo* head;
     Nodo* getNewNode(Object*);
+    int size;
 public:
     //Constructor y destructor
     LinkedList();
     ~LinkedList();
     
-    //Métodos administración de la lista
+    //Métodos de la lista
     virtual void insertar(Object*,int);
     virtual void imprimir();
-    virtual bool buscar(Object*);
-    virtual bool borrar(Object*);
-    virtual bool isEmpty();
+    virtual Object* buscar(Object*);
+    virtual Object* borrar(int);
     virtual Object* posicion(int);
-    virtual Object* anterior();
-    virtual Object* siguiente();
-    virtual bool vaciar(Object*);
-    
-    virtual Object* top();
+    virtual Object* anterior(int);
+    virtual Object* siguiente(int);
+    virtual bool isEmpty();//si no está vacía, imprimir elementos
+    virtual bool vaciar();
     
     //Métodos polimórficos heredados de Object
     virtual std::string toString();
