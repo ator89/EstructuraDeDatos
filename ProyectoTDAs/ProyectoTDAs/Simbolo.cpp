@@ -35,6 +35,13 @@ std::string Simbolo::toString(){
     s.push_back(simbolo);
     return s;
 }
-bool Simbolo::equals(Object* info){
-    return false;
+bool Simbolo::equals(Object* obj){
+    if(obj == NULL)
+        return false;
+    else if(typeid(*obj)==typeid(Simbolo)){
+        Simbolo* temp = dynamic_cast<Simbolo*>(obj);
+        return temp->getSimbolo() == simbolo;
+    }else{
+        return false;
+    }
 }
