@@ -8,6 +8,25 @@
 
 #include "ArrayList.h"
 
+//Constructor
+ArrayList::ArrayList(){
+    capacity=1024;
+    array=new Object*[capacity];
+    size=0;
+}
+
+//Destructor
+ArrayList::~ArrayList()
+{
+    //liberar memoria de los objetos que están en la cola
+    for(int i =0;i<size;i++){
+        if(array[i]!=NULL){//validar
+            delete array[i];
+            array[i]=NULL;
+        }
+    }
+    delete[] array;
+}
 
 
 /*aumenta la capacidad del arreglo*/
