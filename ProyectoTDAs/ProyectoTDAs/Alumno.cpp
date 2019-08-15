@@ -14,11 +14,13 @@ Alumno::Alumno(){
     nombre = "";
 }
 
+//Constructor sobrecargado
 Alumno::Alumno(std::string cuenta,std::string nombre){
     this->cuenta = cuenta;
     this->nombre = nombre;
 }
 
+//Destructor
 Alumno::~Alumno(){}
 
 //Accesores
