@@ -80,3 +80,20 @@ Object* ArrayStack::top(){
     else
         return array[size-1];
 }
+
+/*retorna si la cola está vacía*/
+bool ArrayStack::isEmpty(){
+    return size==0;
+}
+
+
+//Métodos polimórficos heredados de Object
+std::string ArrayStack::toString(){
+    std::string s;
+    
+    return s;
+}
+
+bool ArrayStack::equals(Object*){
+    return false;
+}

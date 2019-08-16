@@ -2,7 +2,9 @@
 //  TDALista.hpp
 //  ProyectoTDAs
 //
-
+//  Created by Angel Torres on 7/30/19.
+//  Copyright © 2019 Angel Torres. All rights reserved.
+//
 
 #ifndef TDALISTA_H
 #define TDALISTA_H
@@ -24,7 +26,7 @@ public:
     virtual Object* siguiente(int)=0;
     virtual bool isEmpty()=0;//si no está vacía, imprimir elementos
     virtual bool vaciar()=0;
-    
+
     //Métodos polimórficos
     virtual std::string toString() = 0;
     virtual bool equals(Object*) = 0;

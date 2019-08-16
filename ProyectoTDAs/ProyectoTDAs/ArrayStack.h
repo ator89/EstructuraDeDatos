@@ -34,8 +34,8 @@ public:
     virtual void anula();
     
     //Métodos polimórficos de Object
-    std::string toString();
-    bool equals(Object*);
+    virtual std::string toString();
+    virtual bool equals(Object*);
     
 };
 

@@ -91,3 +91,14 @@ void ArrayList::resize(){
     array=newArray;
     capacity=newCapacity;
 }
+
+//Métodos polimórficos heredados de Object
+std::string ArrayList::toString(){
+    std::string s;
+    
+    return s;
+}
+
+bool ArrayList::equals(Object*){
+    return false;
+}
