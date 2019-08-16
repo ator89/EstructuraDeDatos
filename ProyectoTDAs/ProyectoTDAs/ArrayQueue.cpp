@@ -90,3 +90,14 @@ void ArrayQueue::clear(){
     }
     size=0;
 }
+
+//Métodos polimórficos heredados de Object
+std::string ArrayQueue::toString(){
+    std::string s;
+    
+    return s;
+}
+
+bool ArrayQueue::equals(Object*){
+    return false;
+}
