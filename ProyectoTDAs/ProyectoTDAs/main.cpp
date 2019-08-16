@@ -83,7 +83,7 @@ int main(){
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de colas
             }
             
-            
+
         }// fin del while del menu principal;
     }//while del programa si opcion esigaul a 4 se sale
     
@@ -194,16 +194,16 @@ void menuColas(){
 //Menú de operaciones de Listas
 void operacionesLista(){
     cout << "\nOperaciones de Listas\n"
-    << "\t1. Insertar Elemento\n"
-    << "\t2. Imprimir Elementos\n"
-    << "\t3. Buscar Elemento\n"
-    << "\t4. Borrar Elemento\n"
-    << "\t5. Ver si está vacía\n"
-    << "\t6. Obtener Elemento por Posición\n"
-    << "\t7. Obtener Siguiente\n"
-    << "\t8. Obtener Anterior\n"
-    << "\t9. Borrar todos los elementos (anula)\n"
-    << "\t10 Regresar al Menú Principal\n";
+        << "\t1. Insertar Elemento\n"
+        << "\t2. Imprimir Elementos\n"
+        << "\t3. Buscar Elemento\n"
+        << "\t4. Borrar Elemento\n"
+        << "\t5. Ver si está vacía\n"
+        << "\t6. Obtener Elemento por Posición\n"
+        << "\t7. Obtener Siguiente\n"
+        << "\t8. Obtener Anterior\n"
+        << "\t9. Borrar todos los elementos (anula)\n"
+        << "\t10 Regresar al Menú Principal\n";
     int opcion = 0;
     opcion = entrada();
 }
@@ -211,21 +211,21 @@ void operacionesLista(){
 //Menú de operaciones de Pila
 void operacionesPila(){
     cout << "\nOperaciones de Pilas\n"
-    << "\t1. Empujar\n"
-    << "\t2. Sacar\n"
-    << "\t3. Ver Tope\n"
-    << "\t4. Verificar si está vacía\n"
-    << "\t5. Imprimir Elementos\n"
-    << "\t6 Regresar al Menú Principal\n";
+        << "\t1. Empujar\n"
+        << "\t2. Sacar\n"
+        << "\t3. Ver Tope\n"
+        << "\t4. Verificar si está vacía\n"
+        << "\t5. Imprimir Elementos\n"
+        << "\t6 Regresar al Menú Principal\n";
 }
 
 //Menú de operaciones de Cola
 void operacionesCola(){
     cout << "\nOperaciones de Pilas\n"
-    << "\t1. Encolar\n"
-    << "\t2. Desencolar\n"
-    << "\t3. Ver Tope\n"
-    << "\t4. Verificar si está vacía\n"
-    << "\t5. Imprimir Elementos\n"
-    << "\t6 Regresar al Menú Principal\n";
+        << "\t1. Encolar\n"
+        << "\t2. Desencolar\n"
+        << "\t3. Ver Tope\n"
+        << "\t4. Verificar si está vacía\n"
+        << "\t5. Imprimir Elementos\n"
+        << "\t6 Regresar al Menú Principal\n";
 }
