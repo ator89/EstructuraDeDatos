@@ -44,6 +44,7 @@ int main(){
     TDACola* linkedcola = new LinkedQueue();
     
     
+    //test
     Alumno* alumno = new Alumno("1001","Nombre");
     Simbolo* simbolo = new Simbolo('%');
     arraypila->push(alumno);
@@ -51,7 +52,7 @@ int main(){
     
     cout << "Array" << arraypila->toString()<<endl;
     cout << "Linkd" << linkedPila->toString()<<endl;
-    
+    //fin test
     
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
