@@ -2,9 +2,7 @@
 //  Object.hpp
 //  ProyectoTDAs
 //
-//  Created by Angel Torres on 7/30/19.
-//  Copyright © 2019 Angel Torres. All rights reserved.
-//
+
 
 #ifndef OBJECT_H
 #define OBJECT_H
