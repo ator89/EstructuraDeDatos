@@ -43,7 +43,7 @@ void Alumno::setNombre(std::string nombre){
 std::string Alumno::toString(){
     std::string s;
     std::stringstream ss;
-    ss << nombre << cuenta;
+    ss << nombre <<cuenta;
     ss >> s ;
     return s;
 }
