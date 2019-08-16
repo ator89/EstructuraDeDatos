@@ -20,19 +20,19 @@ public:
     ~ArrayQueue();
     
     //insertar en la cola
-    virtual void queue(Object*)=0;
+    virtual void queue(Object*);
     //ver tope de la cola
-    virtual Object* front()=0;
+    virtual Object* front();
     //sacar elemento de la cola
-    virtual Object* deQueue()=0;
+    virtual Object* deQueue();
     //ver si esta vacia
-    virtual bool isEmpty()=0;
+    virtual bool isEmpty();
     //eliminar elementos de la cola
-    virtual void clear()=0;
+    virtual void clear();
     
     //Métodos polimórficos heredados de Object
-    std::string toString() = 0;
-    bool equals(Object*) = 0;
+    virtual std::string toString();
+    virtual bool equals(Object*);
 };
 
 #endif
