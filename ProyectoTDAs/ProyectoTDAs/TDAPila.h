@@ -1,10 +1,8 @@
 //
-//  TDAPila.hpp
+//  TDAPila.h
 //  ProyectoTDAs
 //
-//  Created by Angel Torres on 7/30/19.
-//  Copyright © 2019 Angel Torres. All rights reserved.
-//
+
 
 #ifndef TDAPILA_H
 #define TDAPILA_H
@@ -27,8 +25,8 @@ public:
     virtual void anula()=0;
     
     //Métodos polimórficos de Object
-    std::string toString() = 0;
-    bool equals(Object*) = 0;
+    virtual std::string toString() = 0;
+    virtual bool equals(Object*) = 0;
 };
 
 #endif
