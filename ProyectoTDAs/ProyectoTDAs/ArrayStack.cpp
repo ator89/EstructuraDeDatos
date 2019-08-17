@@ -90,7 +90,9 @@ bool ArrayStack::isEmpty(){
 //Métodos polimórficos heredados de Object
 std::string ArrayStack::toString(){
     std::string s;
-    
+    for(int i=size-1; i>=0;i--){
+        s += array[i]->toString();
+    }
     return s;
 }
 
