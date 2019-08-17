@@ -24,7 +24,7 @@ int entrada();
 //Menú principal de selección de Listas
 void menuListas();
 //Menú principal de selección de Colas
-void menuColas();
+void menuColas(TDACola*,TDACola*);
 //Menú principal de selección de Pilas
 void menuPilas(TDAPila*,TDAPila*);
 
@@ -33,15 +33,17 @@ void operacionesLista();
 //Menú de operaciones de Pila
 void operacionesPila(TDAPila*);
 //Menú de operaciones de Cola
-void operacionesCola();
+void operacionesCola(TDACola*);
 
 int main(){
     TDALista* arrayList = new ArrayList();
     TDALista* linkedList = new LinkedList();
+    
     TDAPila* arraypila = new ArrayStack();
     TDAPila* linkedPila = new LinkedStack();
-    TDACola* arraycola = new ArrayQueue();
-    TDACola* linkedcola = new LinkedQueue();
+    
+    TDACola* arrayCola = new ArrayQueue();
+    TDACola* linkedCola = new LinkedQueue();
     
     
     //test
@@ -80,7 +82,7 @@ int main(){
                 menuPilas(arraypila,linkedPila);
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de pilas
             }else if(opcion == 3){// se va a meter a colas
-                menuColas();
+                menuColas(arrayCola,linkedCola);
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de colas
             }
             
@@ -90,8 +92,8 @@ int main(){
     
     delete arraypila;
     delete linkedPila;
-    delete arraycola;
-    delete linkedcola;
+    delete arrayCola;
+    delete linkedCola;
     delete arrayList;
     delete linkedList;
     delete alumno;
@@ -168,7 +170,7 @@ void menuPilas(TDAPila* arrayPila, TDAPila* linkedPila){
 }
 
 //Menú principal de selección de Colas
-void menuColas(){
+void menuColas(TDACola* arrayCola,TDACola* linkedCola){
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
     while(opcion != 3){
@@ -184,10 +186,10 @@ void menuColas(){
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
             
             if (opcion==1){
-                operacionesCola();
+                operacionesCola(arrayCola);
                 MenuP=false;
             }else if (opcion==2){
-                operacionesCola();
+                operacionesCola(linkedCola);
                 MenuP=false;
             }
         }
@@ -265,12 +267,62 @@ void operacionesPila(TDAPila* pila){
 }
 
 //Menú de operaciones de Cola
-void operacionesCola(){
-    cout << "\nOperaciones de Pilas\n"
-        << "\t1. Encolar\n"
-        << "\t2. Desencolar\n"
-        << "\t3. Ver Tope\n"
-        << "\t4. Verificar si está vacía\n"
-        << "\t5. Imprimir Elementos\n"
-        << "\t6 Regresar al Menú Principal\n";
+void operacionesCola(TDACola* cola){
+    
+    Alumno* alumno = NULL;
+    string cuenta;
+    string nombre;
+    
+    int opcion = 0;
+    bool MenuP = false; // bool de menu principal;
+    
+    while(opcion != 6){
+        while (MenuP == false){// while del menu principal
+            cout << "\nOperaciones de Pilas\n"
+                << "\t1. Encolar\n"
+                << "\t2. Desencolar\n"
+                << "\t3. Ver Tope\n"
+                << "\t4. Verificar si está vacía\n"
+                << "\t5. Imprimir Elementos\n"
+                << "\t6 Regresar al Menú Principal\n";
+            opcion = entrada();
+            
+            if (opcion > 0 && opcion <7)
+                MenuP = true;
+            else
+                cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
+            
+            if (opcion == 1){
+                //Queue
+                alumno = new Alumno();
+                cout << "Ingrese el nombre: ";
+                cin >> nombre;
+                cout << "Ingrese el # cuenta: ";
+                cin >> cuenta;
+                alumno->setNombre(nombre);
+                alumno->setCuenta(cuenta);
+                cola->queue(alumno);
+                MenuP = false;
+            }else if (opcion == 2){
+                //deQueue
+                cout << cola->deQueue()->toString();
+                MenuP = false;
+            }
+            else if (opcion == 3){
+                //Top
+                cout << cola->front()->toString();
+                MenuP = false;
+            }
+            else if (opcion == 4){
+                //Verificar si está vacía
+                cola->isEmpty();
+                MenuP = false;
+            }
+            else if (opcion == 5){
+                //Imprimir Elementos
+                cout << cola->toString();
+                MenuP = false;
+            }
+        }
+    }
 }
