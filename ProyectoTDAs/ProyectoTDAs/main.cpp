@@ -26,12 +26,12 @@ void menuListas();
 //Menú principal de selección de Colas
 void menuColas();
 //Menú principal de selección de Pilas
-void menuPilas();
+void menuPilas(TDAPila*,TDAPila*);
 
 //Menú de operaciones de Listas
 void operacionesLista();
 //Menú de operaciones de Pila
-void operacionesPila();
+void operacionesPila(TDAPila*);
 //Menú de operaciones de Cola
 void operacionesCola();
 
@@ -77,7 +77,7 @@ int main(){
                 menuListas();
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de listas
             }else if (opcion == 2){// se va a meter en pilas
-                menuPilas();
+                menuPilas(arraypila,linkedPila);
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de pilas
             }else if(opcion == 3){// se va a meter a colas
                 menuColas();
@@ -139,7 +139,7 @@ void menuListas(){
 }
 
 //Menú principal de selección de Pilas
-void menuPilas(){
+void menuPilas(TDAPila* arrayPila, TDAPila* linkedPila){
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
     while(opcion != 3){
@@ -155,10 +155,12 @@ void menuPilas(){
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
             
             if (opcion==1){
-                operacionesPila();
+                //Trabajar con ArrayStack
+                operacionesPila(arrayPila);
                 MenuP=false;
             }else if (opcion==2){
-                operacionesPila();
+                //Trabajar con LinkedStack
+                operacionesPila(linkedPila);
                 MenuP=false;
             }
         }
@@ -210,14 +212,56 @@ void operacionesLista(){
 }
 
 //Menú de operaciones de Pila
-void operacionesPila(){
-    cout << "\nOperaciones de Pilas\n"
-        << "\t1. Empujar\n"
-        << "\t2. Sacar\n"
-        << "\t3. Ver Tope\n"
-        << "\t4. Verificar si está vacía\n"
-        << "\t5. Imprimir Elementos\n"
-        << "\t6 Regresar al Menú Principal\n";
+void operacionesPila(TDAPila* pila){
+    Simbolo* simbolo = NULL;
+    char symbol;
+    int opcion = 0;
+    bool MenuP = false; // bool de menu principal;
+    while(opcion != 6){
+        while (MenuP == false){// while del menu principal
+            cout << "\nOperaciones de Pilas\n"
+                << "\t1. Empujar\n"
+                << "\t2. Sacar\n"
+                << "\t3. Ver Tope\n"
+                << "\t4. Verificar si está vacía\n"
+                << "\t5. Imprimir Elementos\n"
+                << "\t6 Regresar al Menú Principal\n";
+            opcion = entrada();
+            if (opcion > 0 && opcion <7)
+                MenuP = true;
+            else
+                cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
+            
+            if (opcion == 1){
+                //Push
+                simbolo = new Simbolo();
+                cout << "Ingrese un símbolo: ";
+                cin >> symbol;
+                simbolo->setSimbolo(symbol);
+                pila->push(simbolo);
+                MenuP = false;
+            }else if (opcion == 2){
+                //Pop
+                cout << pila->pop()->toString();
+                MenuP = false;
+            }
+            else if (opcion == 3){
+                //Top
+                cout << pila->top()->toString();
+                MenuP = false;
+            }
+            else if (opcion == 4){
+                //Verificar si está vacía
+                pila->isEmpty();
+                MenuP = false;
+            }
+            else if (opcion == 5){
+                //Imprimir Elementos
+                cout << pila->toString();
+                MenuP = false;
+            }
+        }
+    }
 }
 
 //Menú de operaciones de Cola
