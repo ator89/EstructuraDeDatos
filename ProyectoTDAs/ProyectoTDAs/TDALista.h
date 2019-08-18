@@ -28,6 +28,8 @@ public:
     virtual Object* siguiente(int)=0;
     virtual bool isEmpty()=0;//si no está vacía, imprimir elementos
     virtual void vaciar()=0;
+    
+    virtual int getSize()=0;
 
     //Métodos polimórficos
     virtual std::string toString() = 0;
