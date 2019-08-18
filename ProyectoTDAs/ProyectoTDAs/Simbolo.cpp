@@ -33,9 +33,9 @@ void Simbolo::setSimbolo(char simbolo){
 
 //Métodos polimórficos
 std::string Simbolo::toString(){
-    std::string s;
-    s.push_back(simbolo);
-    return s;
+    std::stringstream ss;
+    ss << "Símbolo: " << simbolo;
+    return ss.str();
 }
 
 
