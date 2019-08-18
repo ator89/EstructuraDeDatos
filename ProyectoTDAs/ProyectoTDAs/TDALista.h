@@ -10,6 +10,8 @@
 #define TDALISTA_H
 
 #include "Object.h"
+#include <iostream>
+#include <sstream>
 
 
 class TDALista:public Object{
