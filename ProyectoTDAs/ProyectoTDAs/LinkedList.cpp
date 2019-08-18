@@ -52,6 +52,7 @@ void LinkedList::insertar(Object* data,int pos){
         }
         temp1->setNext(temp2->getNext());
         temp2->setNext(temp1);
+        //verificar que temp1->next() != NULL
         temp1->getNext()->setPrevious(temp1);
         temp1->setPrevious(temp2);
         
