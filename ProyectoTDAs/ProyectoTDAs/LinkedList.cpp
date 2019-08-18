@@ -31,7 +31,7 @@ Nodo* LinkedList::getNewNode(Object* data){
     return nodo;
 }
 
-//Insertar elemento en cualquier posición de la lista
+//1.1 Insertar elemento en cualquier posición de la lista
 void LinkedList::insertar(Object* data,int pos){
     Nodo* temp1 = getNewNode(data);
     if(head == NULL){
@@ -60,7 +60,7 @@ void LinkedList::insertar(Object* data,int pos){
     }
 }
 
-//Imprimir valores de la lista
+//1.2 Imprimir valores de la lista
 void LinkedList::imprimir(){
     Nodo* temp = head;
     while(temp != NULL){
@@ -76,7 +76,7 @@ Object* LinkedList::buscar(Object* elemento){
     return retval;
 }
 
-//Borrar un elemento por posición
+//1.3 Borrar un elemento por posición
 Object* LinkedList::borrar(int pos){
     Nodo* temp = head;
     Object* retval = temp->getData();
@@ -92,13 +92,13 @@ Object* LinkedList::borrar(int pos){
     return retval;
 }
 
-//Verificar si la lista está vacía
+//1.5 Verificar si la lista está vacía
 bool LinkedList::isEmpty(){
     return head == NULL;
 }
 
 
-//Obtener elemento por posición
+//1.6 Obtener elemento por posición
 Object* LinkedList::posicion(int n){
     Nodo* temp = head;
     temp = temp->getNext();
@@ -107,7 +107,15 @@ Object* LinkedList::posicion(int n){
     return retval;
 }
 
-//Devolver el valor anterior
+//1.7 Retornar el valor siguiente
+Object* LinkedList::siguiente(int pos){
+    if(head == 0)
+        return 0;
+    else
+        return head->getNext()->getData();
+}
+
+//1.8 Devolver el valor anterior
 Object* LinkedList::anterior(int pos){
     if(head == 0)
         return 0;
@@ -117,15 +125,7 @@ Object* LinkedList::anterior(int pos){
         return head->getPrevious()->getData();
 }
 
-//Retornar el valor siguiente
-Object* LinkedList::siguiente(int pos){
-    if(head == 0)
-        return 0;
-    else
-        return head->getNext()->getData();
-}
-
-//vaciar elementos de la lista
+//1.9 vaciar elementos de la lista
 void LinkedList::vaciar(){
     if(head)
         delete head;
