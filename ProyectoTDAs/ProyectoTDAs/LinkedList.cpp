@@ -132,6 +132,10 @@ void LinkedList::vaciar(){
     head = NULL;
 }
 
+int LinkedList::getSize(){
+    return size;
+}
+
 //Métodos polimórficos heredados de Object
 std::string LinkedList::toString(){
     Nodo* tmp = head;

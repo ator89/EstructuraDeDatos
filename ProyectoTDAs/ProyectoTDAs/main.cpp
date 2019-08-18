@@ -49,8 +49,10 @@ int main(){
     
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
+    
     while(opcion != 4){
         while (MenuP == false){// while del menu principal
+            
             cout << "\nMenu Principal" << endl;
             cout << "\t1. Trabajar con Listas" << endl;
             cout << "\t2. Trabajar con Pilas" << endl;
@@ -87,8 +89,6 @@ int main(){
     delete linkedCola;
     delete arrayList;
     delete linkedList;
-    //delete alumno;
-    //delete simbolo;
     
     return 0;
 }
@@ -108,6 +108,7 @@ int entrada(){
 void menuListas(TDALista* arrayList, TDALista* linkedList){
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
+    
     while(opcion != 3){
         while (MenuP == false){// while del menu principal
             cout << "\nMenu Tipo de Lista"<< endl;
@@ -135,6 +136,7 @@ void menuListas(TDALista* arrayList, TDALista* linkedList){
 void menuPilas(TDAPila* arrayPila, TDAPila* linkedPila){
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
+    
     while(opcion != 3){
         while (MenuP == false){// while del menu principal
             cout << "\nMenu Tipo de Pila"<< endl;
@@ -164,6 +166,7 @@ void menuPilas(TDAPila* arrayPila, TDAPila* linkedPila){
 void menuColas(TDACola* arrayCola,TDACola* linkedCola){
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
+    
     while(opcion != 3){
         while (MenuP == false){// while del menu principal
             cout << "\nMenu Tipo de Cola"<< endl;
@@ -219,7 +222,7 @@ void operacionesLista(TDALista* lista){
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
             
             if (opcion == 1){
-                //Insertar Elemento
+                //Insertar Alumno
                 alumno = new Alumno();
                 cout << "Ingrese el nombre: ";
                 cin >> nombre;
@@ -230,11 +233,16 @@ void operacionesLista(TDALista* lista){
                 alumno->setNombre(nombre);
                 alumno->setCuenta(cuenta);
                 lista->insertar(alumno,pos);
+                cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
+                delete alumno;
                 MenuP = false;
             }else if (opcion == 2){
                 //Imprimir Elementos
                 //lista->imprimir();
-                cout << lista->toString();
+                if(lista->isEmpty())
+                    cout << "La Lista está vacía, nada que imprimir.\n";
+                else
+                    cout << "Elementos de la Lista: \n" <<  lista->toString();
                 MenuP = false;
             }
             else if (opcion == 3){
@@ -247,6 +255,10 @@ void operacionesLista(TDALista* lista){
             }
             else if (opcion == 5){
                 //Ver si está vacía
+                if(lista->isEmpty())
+                    cout << "La lista está vacía.\n";
+                else
+                    cout << "La lista tiene " << lista->getSize() << " elementos.\n";
                 MenuP = false;
             }
             else if (opcion == 6){
@@ -261,19 +273,25 @@ void operacionesLista(TDALista* lista){
                 MenuP = false;
             }
             else if (opcion == 8){
+                //Obtener Anterior
                 cout << "Ingrese la posición: ";
                 cin >> pos;
                 cout << lista->anterior(pos)->toString();
-                //Obtener Anterior
                 MenuP = false;
             }
             else if (opcion == 9){
                 //Borrar todos los elementos (anula)
+                if(lista->isEmpty())
+                   cout << "La lista está vacía, nada que vaciar.\n";
+                else{
+                    lista->vaciar();
+                    cout << "La lista se vació exitosamente.\n";
+                }
                 MenuP = false;
             }
         }
     }
-    delete alumno;
+    
 }
 
 //Menú de operaciones de Pila
@@ -282,6 +300,7 @@ void operacionesPila(TDAPila* pila){
     char symbol;
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
+    
     while(opcion != 6){
         while (MenuP == false){// while del menu principal
             cout << "\nOperaciones de Pilas\n"
