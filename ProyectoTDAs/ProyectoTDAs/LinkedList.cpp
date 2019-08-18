@@ -71,13 +71,24 @@ void LinkedList::imprimir(){
 }
 
 Object* LinkedList::buscar(Object* elemento){
-    Object* retval;
+    Nodo* temp = head;
+    Object* retval = temp->getData();;
     return retval;
 }
 
 //Borrar un elemento por posición
 Object* LinkedList::borrar(int pos){
-    Object* retval;
+    Nodo* temp = head;
+    Object* retval = temp->getData();
+    if(pos >= 1 && pos <= size){
+        if(pos == 1){
+            head = temp->getNext();
+            temp->setNext(nullptr);
+            //validar inicio/head != null
+            head->setPrevious(nullptr);
+        }
+    }
+    size--;
     return retval;
 }
 
