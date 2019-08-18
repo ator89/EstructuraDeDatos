@@ -25,7 +25,7 @@ public:
     virtual Object* anterior(int)=0;
     virtual Object* siguiente(int)=0;
     virtual bool isEmpty()=0;//si no está vacía, imprimir elementos
-    virtual bool vaciar()=0;
+    virtual void vaciar()=0;
 
     //Métodos polimórficos
     virtual std::string toString() = 0;
