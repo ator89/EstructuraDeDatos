@@ -204,10 +204,10 @@ void operacionesLista(TDALista* lista){
     string nombre;
     int pos = 0;
     
-    int opcion = 0;
+    int opcion = -1;
     bool MenuP = false; // bool de menu principal;
     
-    while(opcion != 10){
+    while(opcion != 0){
         while (MenuP == false){// while del menu principal
             cout << "\nOperaciones de Listas\n"
             << "\t1. Insertar Elemento\n"
@@ -219,10 +219,10 @@ void operacionesLista(TDALista* lista){
             << "\t7. Obtener Siguiente\n"
             << "\t8. Obtener Anterior\n"
             << "\t9. Borrar todos los elementos (anula)\n"
-            << "\t10 Regresar al Menú Principal\n";
+            << "\t0 Regresar al Menú Principal\n";
             opcion = entrada();
             
-            if (opcion > 0 && opcion <11)
+            if (opcion >= 0 && opcion <11)
                 MenuP = true;
             else
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
@@ -242,7 +242,8 @@ void operacionesLista(TDALista* lista){
                 MenuP = false;
             }else if (opcion == 2){
                 //Imprimir Elementos
-                lista->imprimir();
+                //lista->imprimir();
+                cout << lista->toString();
                 MenuP = false;
             }
             else if (opcion == 3){
@@ -263,9 +264,15 @@ void operacionesLista(TDALista* lista){
             }
             else if (opcion == 7){
                 //Obtener Siguiente
+                cout << "Ingrese la posición: ";
+                cin >> pos;
+                cout << lista->siguiente(pos)->toString();
                 MenuP = false;
             }
             else if (opcion == 8){
+                cout << "Ingrese la posición: ";
+                cin >> pos;
+                cout << lista->anterior(pos)->toString();
                 //Obtener Anterior
                 MenuP = false;
             }

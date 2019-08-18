@@ -8,7 +8,7 @@
 
 #include "LinkedList.h"
 #include "Alumno.h"
-#include <iostream>
+
 
 //Constructor y destructor
 LinkedList::LinkedList(){
@@ -136,11 +136,14 @@ void LinkedList::vaciar(){
 std::string LinkedList::toString(){
     Nodo* tmp = head;
     std::string s;
+    std::stringstream ss;
+    int i = 1;
     while(tmp != nullptr){
-        s+=tmp->getData()->toString();
+        ss << i << " " << tmp->getData()->toString() << "\n";
         tmp = tmp->getNext();
+        i++;
     }
-    return s;
+    return ss.str();
 }
 
 //
