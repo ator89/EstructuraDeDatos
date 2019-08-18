@@ -90,6 +90,9 @@ void ArrayList::vaciar(){
     size = 0;
 }
 
+int ArrayList::getSize(){
+    return size;
+}
 
 /*aumenta la capacidad del arreglo*/
 void ArrayList::resize(){

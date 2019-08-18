@@ -31,6 +31,8 @@ public:
     virtual bool isEmpty();//si no está vacía, imprimir elementos
     virtual void vaciar();
     
+    virtual int getSize();
+    
     //Métodos polimórficos
     virtual std::string toString();
     virtual bool equals(Object*);
