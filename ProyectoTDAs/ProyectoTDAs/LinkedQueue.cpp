@@ -83,8 +83,8 @@ std::string LinkedQueue::toString(){
     Nodo* tmp = inicio;
     std::string s;
     while(tmp != nullptr){
-        s+=tmp->getData()->toString();
-        tmp = tmp->getNext();
+        s += tmp->getData()->toString() + "\n";
+        tmp = tmp->getPrevious();
     }
     return s;
 }
