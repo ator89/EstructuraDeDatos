@@ -22,14 +22,14 @@ using std::string;
 //Validación de entrada de usuario
 int entrada();
 //Menú principal de selección de Listas
-void menuListas();
+void menuListas(TDALista*,TDALista*);
 //Menú principal de selección de Colas
 void menuColas(TDACola*,TDACola*);
 //Menú principal de selección de Pilas
 void menuPilas(TDAPila*,TDAPila*);
 
 //Menú de operaciones de Listas
-void operacionesLista();
+void operacionesLista(TDALista*);
 //Menú de operaciones de Pila
 void operacionesPila(TDAPila*);
 //Menú de operaciones de Cola
@@ -76,7 +76,7 @@ int main(){
             }
             
             if (opcion == 1){// se va a meter al menu de listas alv compa
-                menuListas();
+                menuListas(arrayList,linkedList);
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de listas
             }else if (opcion == 2){// se va a meter en pilas
                 menuPilas(arraypila,linkedPila);
@@ -114,7 +114,7 @@ int entrada(){
 }
 
 //Menú principal de selección de Listas
-void menuListas(){
+void menuListas(TDALista* arrayList, TDALista* linkedList){
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
     while(opcion != 3){
@@ -130,10 +130,10 @@ void menuListas(){
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
             
             if (opcion==1){
-                operacionesLista();
+                operacionesLista(arrayList);
                 MenuP=false;
             }else if (opcion==2){
-                operacionesLista();
+                operacionesLista(linkedList);
                 MenuP=false;
             }
         }
@@ -197,20 +197,84 @@ void menuColas(TDACola* arrayCola,TDACola* linkedCola){
 }
 
 //Menú de operaciones de Listas
-void operacionesLista(){
-    cout << "\nOperaciones de Listas\n"
-        << "\t1. Insertar Elemento\n"
-        << "\t2. Imprimir Elementos\n"
-        << "\t3. Buscar Elemento\n"
-        << "\t4. Borrar Elemento\n"
-        << "\t5. Ver si está vacía\n"
-        << "\t6. Obtener Elemento por Posición\n"
-        << "\t7. Obtener Siguiente\n"
-        << "\t8. Obtener Anterior\n"
-        << "\t9. Borrar todos los elementos (anula)\n"
-        << "\t10 Regresar al Menú Principal\n";
+void operacionesLista(TDALista* lista){
+    
+    Alumno* alumno = NULL;
+    string cuenta;
+    string nombre;
+    int pos = 0;
+    
     int opcion = 0;
-    opcion = entrada();
+    bool MenuP = false; // bool de menu principal;
+    
+    while(opcion != 10){
+        while (MenuP == false){// while del menu principal
+            cout << "\nOperaciones de Listas\n"
+            << "\t1. Insertar Elemento\n"
+            << "\t2. Imprimir Elementos\n"
+            << "\t3. Buscar Elemento\n"
+            << "\t4. Borrar Elemento\n"
+            << "\t5. Ver si está vacía\n"
+            << "\t6. Obtener Elemento por Posición\n"
+            << "\t7. Obtener Siguiente\n"
+            << "\t8. Obtener Anterior\n"
+            << "\t9. Borrar todos los elementos (anula)\n"
+            << "\t10 Regresar al Menú Principal\n";
+            opcion = entrada();
+            
+            if (opcion > 0 && opcion <11)
+                MenuP = true;
+            else
+                cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
+            
+            if (opcion == 1){
+                //Insertar Elemento
+                alumno = new Alumno();
+                cout << "Ingrese el nombre: ";
+                cin >> nombre;
+                cout << "Ingrese el # cuenta: ";
+                cin >> cuenta;
+                cout << "Ingrese la posición: ";
+                cin >> pos;
+                alumno->setNombre(nombre);
+                alumno->setCuenta(cuenta);
+                lista->insertar(alumno,pos);
+                MenuP = false;
+            }else if (opcion == 2){
+                //Imprimir Elementos
+                lista->imprimir();
+                MenuP = false;
+            }
+            else if (opcion == 3){
+                //Buscar Elemento
+                MenuP = false;
+            }
+            else if (opcion == 4){
+                //Borrar Elemento
+                MenuP = false;
+            }
+            else if (opcion == 5){
+                //Ver si está vacía
+                MenuP = false;
+            }
+            else if (opcion == 6){
+                //Obtener Elemento por Posición
+                MenuP = false;
+            }
+            else if (opcion == 7){
+                //Obtener Siguiente
+                MenuP = false;
+            }
+            else if (opcion == 8){
+                //Obtener Anterior
+                MenuP = false;
+            }
+            else if (opcion == 9){
+                //Borrar todos los elementos (anula)
+                MenuP = false;
+            }
+        }
+    }
 }
 
 //Menú de operaciones de Pila
