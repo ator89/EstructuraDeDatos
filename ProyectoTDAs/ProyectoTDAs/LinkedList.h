@@ -32,7 +32,7 @@ public:
     virtual Object* anterior(int);
     virtual Object* siguiente(int);
     virtual bool isEmpty();//si no está vacía, imprimir elementos
-    virtual bool vaciar();
+    virtual void vaciar();
     
     //Métodos polimórficos heredados de Object
     virtual std::string toString();

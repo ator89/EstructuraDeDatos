@@ -50,9 +50,11 @@ void LinkedList::insertar(Object* data,int pos){
         for(int i = 0; i < pos-2; i++){
             temp2 = temp2->getNext();
         }
-        temp1->setNext(temp2->getNext()->getPrevious());
-        temp2->getNext()->setPrevious(temp1->getNext());
+        temp1->setNext(temp2->getNext());
         temp2->setNext(temp1);
+        temp1->getNext()->setPrevious(temp1);
+        temp1->setPrevious(temp2);
+        
         size++;
     }
 }
@@ -71,14 +73,20 @@ Object* LinkedList::buscar(Object* elemento){
     Object* retval;
     return retval;
 }
+
+//Borrar un elemento por posición
 Object* LinkedList::borrar(int pos){
     Object* retval;
     return retval;
 }
+
+//Verificar si la lista está vacía
 bool LinkedList::isEmpty(){
-    return false;
+    return head == NULL;
 }
 
+
+//Obtener elemento por posición
 Object* LinkedList::posicion(int n){
     Nodo* temp = head;
     temp = temp->getNext();
@@ -105,8 +113,11 @@ Object* LinkedList::siguiente(int pos){
         return head->getNext()->getData();
 }
 
-bool LinkedList::vaciar(){
-    return false;
+//vaciar elementos de la lista
+void LinkedList::vaciar(){
+    if(head)
+        delete head;
+    head = NULL;
 }
 
 //Métodos polimórficos heredados de Object
@@ -119,6 +130,8 @@ std::string LinkedList::toString(){
     }
     return s;
 }
+
+//
 bool LinkedList::equals(Object*){
     return false;
 }
