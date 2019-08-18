@@ -7,6 +7,7 @@
 //
 
 #include "ArrayList.h"
+#include <iostream>
 
 //Constructor
 ArrayList::ArrayList(){
@@ -40,7 +41,11 @@ void ArrayList::insertar(Object* data, int pos){
 }
 
 //Imprimir valores de la lista
-void ArrayList::imprimir(){}
+void ArrayList::imprimir(){
+    for(int i=size-1; i>=0;i--){
+        std::cout << array[i]->toString() + "\n";
+    }
+}
 
 Object* ArrayList::buscar(Object* data){
     Object* retval;
@@ -69,13 +74,20 @@ Object* ArrayList::siguiente(int pos){
 
 //Verificar si no está vacía
 bool ArrayList::isEmpty(){
-    return false;
+    return size == 0;
     //si no está vacía, imprimir elementos
 }
 
 //Vaciar la lista
 bool ArrayList::vaciar(){
-    return false;
+    //liberar memoria de los objetos que están en la pila
+    for(int i =0;i<size;i++){
+        if(array[i]!=NULL){//validar
+            delete array[i];
+            array[i]=NULL;
+        }
+    }
+    size=0;
 }
 
 
@@ -95,7 +107,9 @@ void ArrayList::resize(){
 //Métodos polimórficos heredados de Object
 std::string ArrayList::toString(){
     std::string s;
-    
+    for(int i=size-1; i>=0;i--){
+        s += array[i]->toString() + "\n";
+    }
     return s;
 }
 
