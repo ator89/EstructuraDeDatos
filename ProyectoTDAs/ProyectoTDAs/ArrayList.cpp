@@ -79,15 +79,15 @@ bool ArrayList::isEmpty(){
 }
 
 //Vaciar la lista
-bool ArrayList::vaciar(){
-    //liberar memoria de los objetos que están en la pila
-    for(int i =0;i<size;i++){
-        if(array[i]!=NULL){//validar
+void ArrayList::vaciar(){
+    //liberar memoria de los objetos que están en la lista
+    for(int i = 0; i < size; i++){
+        if(array[i] != NULL){//validar
             delete array[i];
-            array[i]=NULL;
+            array[i] = NULL;
         }
     }
-    size=0;
+    size = 0;
 }
 
 
