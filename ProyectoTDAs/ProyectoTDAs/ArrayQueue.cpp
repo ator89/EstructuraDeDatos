@@ -95,7 +95,7 @@ void ArrayQueue::clear(){
 std::string ArrayQueue::toString(){
     std::string s;
     for(int i=size-1; i>=0;i--){
-        s += array[i]->toString();
+        s += array[i]->toString() + "\n";
     }
     return s;
 }
