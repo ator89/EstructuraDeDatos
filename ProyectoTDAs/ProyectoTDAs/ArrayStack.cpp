@@ -91,7 +91,7 @@ bool ArrayStack::isEmpty(){
 std::string ArrayStack::toString(){
     std::string s;
     for(int i=size-1; i>=0;i--){
-        s += array[i]->toString();
+        s += array[i]->toString() + "\n";
     }
     return s;
 }
