@@ -36,6 +36,7 @@ void operacionesPila(TDAPila*);
 void operacionesCola(TDACola*);
 
 int main(){
+    //Instancias de las listas, pilas y colas
     TDALista* arrayList = new ArrayList();
     TDALista* linkedList = new LinkedList();
     
@@ -45,16 +46,6 @@ int main(){
     TDACola* arrayCola = new ArrayQueue();
     TDACola* linkedCola = new LinkedQueue();
     
-    
-    //test
-    Alumno* alumno = new Alumno("1001","Nombre");
-    Simbolo* simbolo = new Simbolo('%');
-    arraypila->push(alumno);
-    linkedPila->push(alumno);
-    
-    cout << "Array" << arraypila->toString()<<endl;
-    cout << "Linkd" << linkedPila->toString()<<endl;
-    //fin test
     
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
@@ -96,8 +87,8 @@ int main(){
     delete linkedCola;
     delete arrayList;
     delete linkedList;
-    delete alumno;
-    delete simbolo;
+    //delete alumno;
+    //delete simbolo;
     
     return 0;
 }
@@ -282,6 +273,7 @@ void operacionesLista(TDALista* lista){
             }
         }
     }
+    delete alumno;
 }
 
 //Menú de operaciones de Pila
@@ -312,29 +304,43 @@ void operacionesPila(TDAPila* pila){
                 cin >> symbol;
                 simbolo->setSimbolo(symbol);
                 pila->push(simbolo);
+                cout << "Símbolo " << symbol << " agregado con éxito a la pila.\n";
                 MenuP = false;
             }else if (opcion == 2){
                 //Pop
-                cout << pila->pop()->toString();
+                if(pila->isEmpty())
+                    cout << "La Pila está vacía, nada que sacar.\n";
+                else
+                    cout << "Elemento sacado de la Pila con éxito: \n" << pila->pop()->toString() << "\n";
                 MenuP = false;
             }
             else if (opcion == 3){
                 //Top
-                cout << pila->top()->toString();
+                if(pila->isEmpty())
+                    cout << "La Pila está vacía, nada que ver.\n";
+                else
+                    cout << "Top de la Pila: \n" << pila->top()->toString() << "\n";
                 MenuP = false;
             }
             else if (opcion == 4){
                 //Verificar si está vacía
-                pila->isEmpty();
+                if(pila->isEmpty())
+                    cout << "La Pila está vacía.\n";
+                else
+                    cout << "La Pila NO está vacía.\n";
                 MenuP = false;
             }
             else if (opcion == 5){
                 //Imprimir Elementos
-                cout << pila->toString();
+                if(pila->isEmpty())
+                    cout << "La Pila está vacía, nada que imprimir.\n";
+                else
+                    cout << "Elementos de la Pila: \n" <<  pila->toString() << "\n";
                 MenuP = false;
             }
         }
     }
+    delete simbolo;
 }
 
 //Menú de operaciones de Cola
@@ -373,13 +379,14 @@ void operacionesCola(TDACola* cola){
                 alumno->setNombre(nombre);
                 alumno->setCuenta(cuenta);
                 cola->queue(alumno);
+                cout << "Alumno " << nombre << " agregado con éxito a la cola.\n";
                 MenuP = false;
             }else if (opcion == 2){
                 //deQueue
                 if(cola->isEmpty())
                     cout << "La Cola está vacía.\n";
                 else
-                    cout << "Datos sacados de la cola: \n" << cola->deQueue()->toString() << "\n";
+                    cout << "Elemento sacado de la cola con éxito: \n" << cola->deQueue()->toString() << "\n";
                 MenuP = false;
             }
             else if (opcion == 3){
@@ -401,11 +408,12 @@ void operacionesCola(TDACola* cola){
             else if (opcion == 5){
                 //Imprimir Elementos
                 if(cola->isEmpty())
-                    cout << "La Cola está vacía.\n";
+                    cout << "La Cola está vacían nada que mostrar.\n";
                 else
                     cout << "Elementos de la cola: \n" << cola->toString() << "\n";
                 MenuP = false;
             }
         }
     }
+    delete alumno;
 }
