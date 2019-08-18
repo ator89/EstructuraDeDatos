@@ -80,7 +80,7 @@ std::string LinkedStack::toString(){
     Nodo* tmp = head;
     std::string s;
     while(tmp != nullptr){
-        s+=tmp->getData()->toString();
+        s+=tmp->getData()->toString() + "\n";
         tmp = tmp->getNext();
     }
     return s;
