@@ -349,7 +349,7 @@ void operacionesCola(TDACola* cola){
     
     while(opcion != 6){
         while (MenuP == false){// while del menu principal
-            cout << "\nOperaciones de Pilas\n"
+            cout << "\nOperaciones de Colas\n"
                 << "\t1. Encolar\n"
                 << "\t2. Desencolar\n"
                 << "\t3. Ver Tope\n"
@@ -376,22 +376,34 @@ void operacionesCola(TDACola* cola){
                 MenuP = false;
             }else if (opcion == 2){
                 //deQueue
-                cout << cola->deQueue()->toString();
+                if(cola->isEmpty())
+                    cout << "La Cola está vacía.\n";
+                else
+                    cout << "Datos sacados de la cola: \n" << cola->deQueue()->toString() << "\n";
                 MenuP = false;
             }
             else if (opcion == 3){
                 //Top
-                cout << cola->front()->toString();
+                if(cola->isEmpty())
+                    cout << "La Cola está vacía.\n";
+                else
+                    cout << "Top de la cola: \n" << cola->front()->toString() << "\n";
                 MenuP = false;
             }
             else if (opcion == 4){
                 //Verificar si está vacía
-                cola->isEmpty();
+                if(cola->isEmpty())
+                    cout << "La Cola está vacía.\n";
+                else
+                    cout << "La Cola NO está vacía.\n";
                 MenuP = false;
             }
             else if (opcion == 5){
                 //Imprimir Elementos
-                cout << cola->toString();
+                if(cola->isEmpty())
+                    cout << "La Cola está vacía.\n";
+                else
+                    cout << "Elementos de la cola: \n" << cola->toString() << "\n";
                 MenuP = false;
             }
         }
