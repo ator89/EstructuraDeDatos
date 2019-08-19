@@ -12,6 +12,7 @@
 #include "Object.h"
 #include <iostream>
 #include <sstream>
+#include <string>
 
 
 class TDALista:public Object{
@@ -21,7 +22,7 @@ public:
     //Métodos de la lista
     virtual void insertar(Object*,int)=0;
     virtual void imprimir()=0;
-    virtual Object* buscar(Object*)=0;
+    virtual Object* buscar(string)=0;
     virtual Object* borrar(int)=0;
     virtual Object* posicion(int)=0;
     virtual Object* anterior(int)=0;
