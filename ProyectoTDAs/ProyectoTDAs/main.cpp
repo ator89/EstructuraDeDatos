@@ -297,10 +297,10 @@ void operacionesLista(TDALista* lista){
                 cin >> pos;
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
-                else if(pos == lista->getSize())
-                    cout << "No hay más valores siguientes\n";
+                else if(pos <= 1)
+                    cout << "No hay valores anteriores.\n";
                 else if(pos <= 0 || pos > lista->getSize()){
-                    cout << "Posicón inválida, intente otra.\n";
+                    cout << "Posición inválida, intente otra.\n";
                 }else
                     cout << lista->anterior(pos)->toString();
                 MenuP = false;

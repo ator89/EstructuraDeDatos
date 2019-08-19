@@ -180,15 +180,6 @@ Object* LinkedList::posicion(int n){
 
 //1.7 Retornar el valor siguiente
 Object* LinkedList::siguiente(int pos){
-    /*if(head == 0)
-        return 0;
-    else{
-        Nodo* temp = head;
-        for(int i = 0; i < pos-2; i++)
-            temp = temp->getNext();
-        return temp->getNext()->getData();
-    }
-    */
     Nodo* temp = head;
     int count = 1;
     Object* retval = temp->getData();
@@ -203,17 +194,16 @@ Object* LinkedList::siguiente(int pos){
 
 //1.8 Devolver el valor anterior
 Object* LinkedList::anterior(int pos){
-    if(head == 0)
-        return 0;
-    else if(head->getPrevious() == 0)
-        return 0;
-    else{
-        Nodo* temp = head;
-        for(int i = 0; i < pos-2; i++)
-            temp = temp->getNext();
-        return temp->getPrevious()->getData();
+    Nodo* temp = head;
+    int count = 1;
+    Object* retval = temp->getData();
+    while(temp != nullptr){
+        if(count == pos)
+            retval = temp->getPrevious()->getData();
+        temp = temp->getNext();
+        count++;
     }
-    
+    return retval;
 }
 
 //1.9 vaciar elementos de la lista
