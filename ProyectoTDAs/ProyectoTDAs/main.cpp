@@ -196,7 +196,6 @@ void operacionesLista(TDALista* lista){
     Alumno* alumno = NULL;
     string cuenta;
     string nombre;
-    int pos = 0;
     
     int opcion = -1;
     bool MenuP = false; // bool de menu principal;
@@ -223,6 +222,7 @@ void operacionesLista(TDALista* lista){
             
             if (opcion == 1){
                 //Insertar Alumno
+                int pos = 0;
                 alumno = new Alumno();
                 cout << "Ingrese el nombre: ";
                 cin >> nombre;
@@ -246,7 +246,8 @@ void operacionesLista(TDALista* lista){
                 MenuP = false;
             }
             else if (opcion == 3){
-                //Buscar Elemento
+                //Buscar Elemento por #cuenta
+                
                 MenuP = false;
             }
             else if (opcion == 4){
@@ -263,10 +264,20 @@ void operacionesLista(TDALista* lista){
             }
             else if (opcion == 6){
                 //Obtener Elemento por Posición
+                int pos = 0;
+                cout << "Ingrese posición: ";
+                cin >> pos;
+                if(lista->isEmpty())
+                    cout << "La lista está vacía, nada que buscar.\n";
+                else if(pos <= 0 || pos > lista->getSize()){
+                    cout << "Posicón inválida, intente otra.\n";
+                }else
+                    cout << lista->posicion(pos)->toString();
                 MenuP = false;
             }
             else if (opcion == 7){
                 //Obtener Siguiente
+                int pos = 0;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
                 cout << lista->siguiente(pos)->toString();
@@ -274,6 +285,7 @@ void operacionesLista(TDALista* lista){
             }
             else if (opcion == 8){
                 //Obtener Anterior
+                int pos = 0;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
                 cout << lista->anterior(pos)->toString();
@@ -291,7 +303,7 @@ void operacionesLista(TDALista* lista){
             }
         }
     }
-    delete alumno;
+    //delete alumno;
 }
 
 //Menú de operaciones de Pila

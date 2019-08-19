@@ -110,13 +110,9 @@ void LinkedList::insertar(Object* data,int pos){
                     reco = reco->getNext();
                 Nodo *siguiente = reco = reco->getNext();
                 reco->setNext(nuevo);
-                //reco->sig = nuevo;
                 nuevo->setPrevious(reco);
-                //nuevo->ant = reco;
-                //nuevo->sig = siguiente;
                 nuevo->setNext(siguiente);
                 siguiente->setPrevious(nuevo);
-                //siguiente->ant = nuevo;
             }
     }
     size++;
@@ -171,9 +167,14 @@ int LinkedList::getSize(){
 //1.6 Obtener elemento por posición
 Object* LinkedList::posicion(int n){
     Nodo* temp = head;
-    temp = temp->getNext();
+    int pos = 1;
     Object* retval = temp->getData();
-    
+    while(temp != nullptr){
+        if(n == pos)
+            retval = temp->getData();
+        temp = temp->getNext();
+        pos++;
+    }
     return retval;
 }
 
