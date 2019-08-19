@@ -134,6 +134,14 @@ void LinkedList::imprimir(){
 Object* LinkedList::buscar(std::string cuenta){
     Nodo* temp = head;
     Object* retval = temp->getData();;
+    while(temp != nullptr){
+        if(typeid(*retval)==typeid(Alumno)){
+            Alumno* alumno = dynamic_cast<Alumno*>(retval);
+            if(cuenta.compare(alumno->getCuenta()) == 0)
+                retval = temp->getData();
+        }
+        temp = temp->getNext();
+    }
     return retval;
 }
 
