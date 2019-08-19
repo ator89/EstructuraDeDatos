@@ -234,15 +234,15 @@ void operacionesLista(TDALista* lista){
                 alumno->setCuenta(cuenta);
                 lista->insertar(alumno,pos);
                 cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
-                delete alumno;
                 MenuP = false;
             }else if (opcion == 2){
                 //Imprimir Elementos
-                //lista->imprimir();
+                
                 if(lista->isEmpty())
                     cout << "La Lista está vacía, nada que imprimir.\n";
                 else
-                    cout << "Elementos de la Lista: \n" <<  lista->toString();
+                    //cout << "Elementos de la Lista: \n" <<  lista->toString();
+                    lista->imprimir();
                 MenuP = false;
             }
             else if (opcion == 3){
@@ -291,7 +291,7 @@ void operacionesLista(TDALista* lista){
             }
         }
     }
-    
+    delete alumno;
 }
 
 //Menú de operaciones de Pila
