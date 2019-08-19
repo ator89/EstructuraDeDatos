@@ -269,7 +269,7 @@ void operacionesLista(TDALista* lista){
                 cin >> pos;
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
-                else if(pos <= 0 || pos > lista->getSize()){
+                else if(pos <= 0 || pos > lista->getSize()){
                     cout << "Posicón inválida, intente otra.\n";
                 }else
                     cout << lista->posicion(pos)->toString();
@@ -280,7 +280,14 @@ void operacionesLista(TDALista* lista){
                 int pos = 0;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
-                cout << lista->siguiente(pos)->toString();
+                if(lista->isEmpty())
+                    cout << "La lista está vacía, nada que buscar.\n";
+                else if(pos == lista->getSize())
+                    cout << "No hay más valores siguientes\n";
+                else if(pos <= 0 || pos > lista->getSize()){
+                    cout << "Posicón inválida, intente otra.\n";
+                }else
+                    cout << lista->siguiente(pos)->toString();
                 MenuP = false;
             }
             else if (opcion == 8){
@@ -288,7 +295,14 @@ void operacionesLista(TDALista* lista){
                 int pos = 0;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
-                cout << lista->anterior(pos)->toString();
+                if(lista->isEmpty())
+                    cout << "La lista está vacía, nada que buscar.\n";
+                else if(pos == lista->getSize())
+                    cout << "No hay más valores siguientes\n";
+                else if(pos <= 0 || pos > lista->getSize()){
+                    cout << "Posicón inválida, intente otra.\n";
+                }else
+                    cout << lista->anterior(pos)->toString();
                 MenuP = false;
             }
             else if (opcion == 9){
