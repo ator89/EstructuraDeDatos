@@ -131,7 +131,7 @@ void LinkedList::imprimir(){
 }
 
 //1.3 Buscar un elemento por número de cuenta
-Object* LinkedList::buscar(Object* elemento){
+Object* LinkedList::buscar(std::string cuenta){
     Nodo* temp = head;
     Object* retval = temp->getData();;
     return retval;
