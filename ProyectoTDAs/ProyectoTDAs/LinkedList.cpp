@@ -67,105 +67,9 @@ void LinkedList::insertar(Object* data,int pos){
         temp1->setNext(temp2->getNext());
         temp2->getNext()->setPrevious(temp1);
         temp2->setNext(temp1);
-        /*
-        temp2->getNext()->setPrevious(temp1);
-        temp1->setNext(temp2->getNext()->getPrevious());
-        temp1->setPrevious(temp2);
-        temp2->setNext(temp1);
-         
-         temp1->setNext(temp2->getNext());
-         temp2->setNext(temp1);
-         //verificar que temp1->next() != NULL
-         temp1->getNext()->setPrevious(temp1);
-         temp1->setPrevious(temp2);
-         
-         */
         size++;
         return;
     }
-    /*if(head == NULL){
-        head = temp1;
-        size++;
-        return;
-    }
-    else if(pos == 1){
-        head->setPrevious(temp1);
-        temp1->setNext(head);
-        head = temp1;
-        size++;
-        return;
-    }else{
-        Nodo* temp2 = head;
-        for(int i = 0; i < pos-2; i++){
-            temp2 = temp2->getNext();
-        }
-        temp1->setNext(temp2->getNext());
-        temp2->setNext(temp1);
-        //verificar que temp1->next() != NULL
-        temp1->getNext()->setPrevious(temp1);
-        temp1->setPrevious(temp2);
-        
-        size++;
-    }*/
-    /*if(pos >= 1 && pos <= size+1){
-        Nodo* nodo = new Nodo();
-        nodo->setData(data);
-        nodo->setPrevious(nullptr);
-        nodo->setNext(nullptr);
-        if(head == 0 || size == 0){
-            head = nodo;
-        }else if(pos == 1){
-            nodo->setNext(head);
-            head->setPrevious(nodo);
-            head = nodo;
-        }else{
-            Nodo* temp = head;
-            for(int i=2; i<pos-1; i++)
-                temp = temp->getNext();
-            nodo->setNext(temp->getNext());
-            temp->setNext(nodo);
-            nodo->getNext()->setPrevious(nodo);
-            nodo->setPrevious(temp);
-        }
-    }
-    if (pos <= size + 1)
-    {
-        Nodo *nuevo = new Nodo();
-        nuevo->setData(data);
-        if (pos == 1)
-        {
-            nuevo->setNext(head);
-            if (head != NULL)
-                head->setPrevious(nuevo);
-            head = nuevo;
-        }
-        else
-            if (pos == size + 1)
-            {
-                Nodo *reco = head;
-                while (reco->getNext() != NULL)
-                {
-                    reco = reco->getNext();
-                }
-                reco->setNext(nuevo);
-                nuevo->setPrevious(reco);
-                nuevo->setNext(nullptr);
-            }
-            else
-            {
-                Nodo *reco = head;
-                for (int f = 1; f <= pos - 2; f++)
-                    reco = reco->getNext();
-                Nodo *siguiente = reco = reco->getNext();
-                reco->setNext(nuevo);
-                nuevo->setPrevious(reco);
-                nuevo->setNext(siguiente);
-                siguiente->setPrevious(nuevo);
-            }
-    }
-     size++;
-     */
-    
 }
 
 //1.2 Imprimir valores de la lista
@@ -241,9 +145,10 @@ Object* LinkedList::borrar(int pos){
             for(int i = 0; i<pos-2; i++)
                 temp = temp->getNext();
             Nodo* temp2 = temp->getNext();
-            Object* retval = temp2->getNext()->getData();
+            Object* retval = temp2->getData();
             temp->setNext(temp2->getNext());
             temp2->getNext()->setPrevious(temp);
+            temp2->setData(nullptr);
             temp2->setNext(nullptr);
             temp2->setPrevious(nullptr);
             delete temp2;
