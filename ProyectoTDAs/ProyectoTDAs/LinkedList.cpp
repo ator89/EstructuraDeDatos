@@ -35,8 +35,55 @@ Nodo* LinkedList::getNewNode(Object* data){
 
 //1.1 Insertar elemento en cualquier posición de la lista
 void LinkedList::insertar(Object* data,int pos){
-    /*Nodo* temp1 = getNewNode(data);
+    Nodo* temp1 = getNewNode(data);
+    //Agregar si la lista está vacía
     if(head == NULL){
+        head = temp1;
+        size++;
+        return;
+    }
+    //Agregar al inicio
+    if(pos == 1){
+        head->setPrevious(temp1);
+        temp1->setNext(head);
+        head = temp1;
+        size++;
+        return;
+    }
+    //Agregar al final
+    if(pos == size+1){
+        Nodo* temp2 = head;
+        while(temp2->getNext() != nullptr)
+            temp2 = temp2->getNext();
+        temp2->setNext(temp1);
+        temp1->setPrevious(temp2);
+        size++;
+        return;
+    }else{
+        Nodo* temp2 = head;
+        for(int i = 0; i < pos-2; i++)
+            temp2 = temp2->getNext();
+        temp1->setPrevious(temp2);
+        temp1->setNext(temp2->getNext());
+        temp2->getNext()->setPrevious(temp1);
+        temp2->setNext(temp1);
+        /*
+        temp2->getNext()->setPrevious(temp1);
+        temp1->setNext(temp2->getNext()->getPrevious());
+        temp1->setPrevious(temp2);
+        temp2->setNext(temp1);
+         
+         temp1->setNext(temp2->getNext());
+         temp2->setNext(temp1);
+         //verificar que temp1->next() != NULL
+         temp1->getNext()->setPrevious(temp1);
+         temp1->setPrevious(temp2);
+         
+         */
+        size++;
+        return;
+    }
+    /*if(head == NULL){
         head = temp1;
         size++;
         return;
@@ -80,7 +127,7 @@ void LinkedList::insertar(Object* data,int pos){
             nodo->getNext()->setPrevious(nodo);
             nodo->setPrevious(temp);
         }
-    }*/
+    }
     if (pos <= size + 1)
     {
         Nodo *nuevo = new Nodo();
@@ -116,7 +163,9 @@ void LinkedList::insertar(Object* data,int pos){
                 siguiente->setPrevious(nuevo);
             }
     }
-    size++;
+     size++;
+     */
+    
 }
 
 //1.2 Imprimir valores de la lista
@@ -172,7 +221,7 @@ Object* LinkedList::borrar(int pos){
             size--;
             return retval;
         }
-        //posición final
+        //borrar posición final
         if(pos == size){
             Nodo* temp = head;
             for(int i = 0; i<pos-2; i++)
