@@ -76,22 +76,21 @@ Object* ArrayList::borrar(int pos){
 //1.5 Verificar si no está vacía
 bool ArrayList::isEmpty(){
     return size == 0;
-    //si no está vacía, imprimir elementos
 }
 
-//1.6
+//1.6 Retonar el valor que está en la posición
 Object* ArrayList::posicion(int pos){
     Object* retval = array[pos];
     return retval;
 }
 
-//1.7
+//1.7 Retornar valor siguiente
 Object* ArrayList::siguiente(int pos){
     Object* retval = array[pos+1];
     return retval;
 }
 
-//1.8
+//1.8 Retornar valor anterior
 Object* ArrayList::anterior(int pos){
     Object* retval = array[pos-1];
     return retval;
