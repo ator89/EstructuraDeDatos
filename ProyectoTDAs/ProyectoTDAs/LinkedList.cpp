@@ -89,13 +89,13 @@ Object* LinkedList::buscar(std::string cuenta){
     Nodo* temp = head;
     Object* retval = temp->getData();
     while(temp != nullptr){
-        if(cuenta.find(temp->getData()->toString()) != std::string::npos)
-            retval = temp->getData();
-        else
-            retval = nullptr;
+        if(typeid(*retval)==typeid(Alumno)){
+            Alumno* alumno = dynamic_cast<Alumno*>(temp->getData());
+            if(cuenta.compare(alumno->getCuenta()) == 0)
+                retval = temp->getData();
+        }
         temp = temp->getNext();
     }
-    //std::cout << retval->toString();
     return retval;
 }
 
@@ -249,6 +249,13 @@ std::string LinkedList::toString(){
 }
 
 //
-bool LinkedList::equals(Object*){
-    return false;
+bool LinkedList::equals(Object* obj){
+    if(obj == NULL)
+        return false;
+    else if(typeid(*obj)==typeid(Alumno)){
+        Alumno* temp = dynamic_cast<Alumno*>(obj);
+        return true;
+    }else{
+        return false;
+    }
 }

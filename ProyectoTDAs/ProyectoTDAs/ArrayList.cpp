@@ -63,13 +63,13 @@ void ArrayList::imprimir(){
 
 //1.3 
 Object* ArrayList::buscar(std::string data){
-    Object* retval;
+    Object* retval =0;
     return retval;
 }
 
 //1.4
 Object* ArrayList::borrar(int pos){
-    Object* retval;
+    Object* retval=0;
     return retval;
 }
 
