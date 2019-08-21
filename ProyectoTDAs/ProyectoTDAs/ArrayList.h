@@ -23,7 +23,7 @@ public:
     
     virtual void insertar(Object*,int);
     virtual void imprimir();
-    virtual Object* buscar(Object*);
+    virtual Object* buscar(std::string);
     virtual Object* borrar(int);
     virtual Object* posicion(int);
     virtual Object* anterior(int);

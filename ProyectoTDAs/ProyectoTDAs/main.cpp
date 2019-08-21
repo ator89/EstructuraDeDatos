@@ -247,11 +247,31 @@ void operacionesLista(TDALista* lista){
             }
             else if (opcion == 3){
                 //Buscar Elemento por #cuenta
-                
+                string cuenta = "";
+                cout << "Ingrese el número de cuenta: ";
+                cin >> cuenta;
+                if(lista->buscar(cuenta)== nullptr)
+                    cout << "No existe.\n";
+                else
+                    cout << lista->buscar(cuenta)->toString();
                 MenuP = false;
             }
             else if (opcion == 4){
                 //Borrar Elemento
+                int pos = 0;
+                
+                if(lista->isEmpty())
+                    cout << "La lista está vacía, nada que borrar.\n";
+                else{
+                    cout << "Ingrese posición: ";
+                    cin >> pos;
+                    if(pos > lista->getSize() || pos <1){
+                        cout << "Fuera de rango, elija un elemento dentro de la lista.\n";
+                    }else{
+                        cout << "Elemento " << lista->borrar(pos)->toString() << " borrado con éxito\n";
+                    }
+                }
+                
                 MenuP = false;
             }
             else if (opcion == 5){

@@ -29,56 +29,69 @@ ArrayList::~ArrayList()
     delete[] array;
 }
 
-//Insertar en posición n
+//1.1 Insertar en posición n
 void ArrayList::insertar(Object* data, int pos){
     if(size==capacity){//revisar si hay capacidad para el elemento
         resize();
     }
-    for(int i = size-1; i>=pos; i--)
-        array[i+1] = array[i];
-    array[pos] = data;
+    //insertar al inicio
+    if(pos == 1){
+        for(int i = size-1; i>=pos; i--)
+            array[i+1] = array[i];
+        array[pos] = data;
+    }
+    
     size++;
 }
 
-//Imprimir valores de la lista
+//1.2 Imprimir valores de la lista
 void ArrayList::imprimir(){
     for(int i=size-1; i>=0;i--){
         std::cout << array[i]->toString() + "\n";
     }
 }
 
-Object* ArrayList::buscar(Object* data){
+//1.3 
+Object* ArrayList::buscar(std::string data){
     Object* retval;
     return retval;
 }
 
+//1.4
 Object* ArrayList::borrar(int pos){
     Object* retval;
     return retval;
 }
 
-Object* ArrayList::posicion(int pos){
-    Object* retval;
-    return retval;
-}
-
-Object* ArrayList::anterior(int pos){
-    Object* retval;
-    return retval;
-}
-
-Object* ArrayList::siguiente(int pos){
-    Object* retval;
-    return retval;
-}
-
-//Verificar si no está vacía
+//1.5 Verificar si no está vacía
 bool ArrayList::isEmpty(){
     return size == 0;
     //si no está vacía, imprimir elementos
 }
 
-//Vaciar la lista
+//1.6
+Object* ArrayList::posicion(int pos){
+    Object* retval;
+    return retval;
+}
+
+//1.7
+Object* ArrayList::siguiente(int pos){
+    Object* retval;
+    return retval;
+}
+
+//1.8
+Object* ArrayList::anterior(int pos){
+    Object* retval;
+    return retval;
+}
+
+
+
+
+
+//1.9 Vaciar la lista
 void ArrayList::vaciar(){
     //liberar memoria de los objetos que están en la lista
     for(int i = 0; i < size; i++){
