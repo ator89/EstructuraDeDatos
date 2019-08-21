@@ -36,7 +36,17 @@ void ArrayList::insertar(Object* data, int pos){
     }
     //insertar al inicio
     if(pos == 1){
-        for(int i = size-1; i>=pos; i--)
+        for(int i = size;i>0;i--){
+            array[i]=array[i-1];
+        }
+        array[0] = data;
+    }
+    //insertar al final
+    else if(pos == size){
+        array[size]=data;
+    }
+    else{
+        for(int i = size-1; i>=pos;i--)
             array[i+1] = array[i];
         array[pos] = data;
     }
@@ -47,7 +57,7 @@ void ArrayList::insertar(Object* data, int pos){
 //1.2 Imprimir valores de la lista
 void ArrayList::imprimir(){
     for(int i=size-1; i>=0;i--){
-        std::cout << array[i]->toString() + "\n";
+        std::cout << i <<" - " <<array[i]->toString() + "\n";
     }
 }
 
@@ -71,23 +81,21 @@ bool ArrayList::isEmpty(){
 
 //1.6
 Object* ArrayList::posicion(int pos){
-    Object* retval;
+    Object* retval = array[pos];
     return retval;
 }
 
 //1.7
 Object* ArrayList::siguiente(int pos){
-    Object* retval;
+    Object* retval = array[pos+1];
     return retval;
 }
 
 //1.8
 Object* ArrayList::anterior(int pos){
-    Object* retval;
+    Object* retval = array[pos-1];
     return retval;
 }
-
-
 
 
 

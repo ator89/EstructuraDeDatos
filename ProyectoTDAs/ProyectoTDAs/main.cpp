@@ -224,16 +224,27 @@ void operacionesLista(TDALista* lista){
                 //Insertar Alumno
                 int pos = 0;
                 alumno = new Alumno();
-                cout << "Ingrese el nombre: ";
-                cin >> nombre;
-                cout << "Ingrese el # cuenta: ";
-                cin >> cuenta;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
-                alumno->setNombre(nombre);
-                alumno->setCuenta(cuenta);
-                lista->insertar(alumno,pos);
-                cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
+                
+                if(pos < 1 ){
+                    cout << "Fuera de rango, no puede ingresar valores negativos.\n";
+                }
+                else if(pos < 1 || pos > lista->getSize()+1){
+                    cout << "Posición inválida, sólo se puede agregar al final de la lista.\n";
+                }
+                else{
+                    cout << "Ingrese el nombre: ";
+                    cin >> nombre;
+                    cout << "Ingrese el # cuenta: ";
+                    cin >> cuenta;
+                    alumno->setNombre(nombre);
+                    alumno->setCuenta(cuenta);
+                    lista->insertar(alumno,pos);
+                    cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
+                }
+                
+                
                 MenuP = false;
             }else if (opcion == 2){
                 //Imprimir Elementos
