@@ -31,6 +31,7 @@ public:
     virtual void vaciar()=0;
     
     virtual int getSize()=0;
+    virtual int getPosBusqueda()=0;
 
     //Métodos polimórficos
     virtual std::string toString() = 0;
