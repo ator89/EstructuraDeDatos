@@ -43,19 +43,21 @@ int ArrayList::getPosBusqueda(){
 //1.1 Insertar en posición n
 void ArrayList::insertar(Object* data, int pos){
     size++;
+    pos--;
     if(size==capacity){//revisar si hay capacidad para el elemento
         resize();
     }
     //insertar al inicio
-    if(pos == 1){
+    if(pos == 0){
+        //hacer corrimiento
         for(int i = size; i>0; i--){
             array[i] = array[i-1];
         }
         array[0] = data;
     }
     //insertar al final
-    else if(pos == size){
-        array[size] = data;
+    else if(pos == size-1){
+        array[size-1] = data;
     }
     else{
         for(int i = size-1; i>=pos; i--)
