@@ -18,6 +18,7 @@ private:
     Nodo* head;
     Nodo* getNewNode(Object*);
     int size;
+    int posBusqueda;
 public:
     //Constructor y destructor
     LinkedList();
@@ -35,6 +36,7 @@ public:
     virtual void vaciar();
     
     virtual int getSize();
+    virtual int getPosBusqueda();
     
     //Métodos polimórficos heredados de Object
     virtual std::string toString();

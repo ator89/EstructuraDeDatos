@@ -15,6 +15,7 @@
 LinkedList::LinkedList(){
     head = NULL;
     size = 0;
+    posBusqueda = 0;
 }
 
 //Destructor
@@ -31,6 +32,16 @@ Nodo* LinkedList::getNewNode(Object* data){
     nodo->setPrevious(nullptr);
     nodo->setNext(nullptr);
     return nodo;
+}
+
+//Retornar la cantidad de elementos en la lista
+int LinkedList::getSize(){
+    return size;
+}
+
+//Retornar la posición en la búsqueda
+int LinkedList::getPosBusqueda(){
+    return posBusqueda;
 }
 
 //1.1 Insertar elemento en cualquier posición de la lista
@@ -87,16 +98,25 @@ void LinkedList::imprimir(){
 //1.3 Buscar un elemento por número de cuenta
 Object* LinkedList::buscar(std::string cuenta){
     Nodo* temp = head;
-    Object* retval = temp->getData();
+    
+    posBusqueda = 0;
+    int i = 1;
     while(temp != nullptr){
+        Object* retval = temp->getData();
         if(typeid(*retval)==typeid(Alumno)){
             Alumno* alumno = dynamic_cast<Alumno*>(temp->getData());
-            if(cuenta.compare(alumno->getCuenta()) == 0)
+            if(cuenta.compare(alumno->getCuenta()) == 0){
                 retval = temp->getData();
+                posBusqueda = i;
+                return retval;
+            }
         }
+        else
+            return nullptr;
         temp = temp->getNext();
+        i++;
     }
-    return retval;
+    return 0;
 }
 
 //1.4 Borrar un elemento por posición
@@ -164,12 +184,6 @@ Object* LinkedList::borrar(int pos){
 bool LinkedList::isEmpty(){
     return head == NULL;
 }
-
-//Retornar la cantidad de elementos en la lista
-int LinkedList::getSize(){
-    return size;
-}
-
 
 //1.6 Obtener elemento por posición
 Object* LinkedList::posicion(int n){
@@ -253,7 +267,8 @@ bool LinkedList::equals(Object* obj){
     if(obj == NULL)
         return false;
     else if(typeid(*obj)==typeid(Alumno)){
-        Alumno* temp = dynamic_cast<Alumno*>(obj);
+        //Alumno* temp = dynamic_cast<Alumno*>(obj);
+        //temp->getNombre();
         return true;
     }else{
         return false;
