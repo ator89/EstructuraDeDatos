@@ -11,9 +11,10 @@
 
 //Constructor
 ArrayList::ArrayList(){
-    capacity=1024;
-    array=new Object*[capacity];
-    size=0;
+    capacity = 1024;
+    array = new Object*[capacity];
+    size = 0;
+    posBusqueda = 0;
 }
 
 //Destructor
@@ -27,6 +28,16 @@ ArrayList::~ArrayList()
         }
     }
     delete[] array;
+}
+
+//Retornar el tamaño de la lista
+int ArrayList::getSize(){
+    return size;
+}
+
+//Retornar la posición en la búsqueda
+int ArrayList::getPosBusqueda(){
+    return posBusqueda;
 }
 
 //1.1 Insertar en posición n
@@ -110,9 +121,7 @@ void ArrayList::vaciar(){
     size = 0;
 }
 
-int ArrayList::getSize(){
-    return size;
-}
+
 
 /*aumenta la capacidad del arreglo*/
 void ArrayList::resize(){

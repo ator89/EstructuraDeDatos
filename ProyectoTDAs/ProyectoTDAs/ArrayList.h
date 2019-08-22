@@ -16,6 +16,7 @@ private:
     Object** array;//arreglo de apuntadores a object
     int capacity;//tamaño del arreglo
     int size;//cantidad de elementos en la lista
+    int posBusqueda;//guardar posición de búsqueda
     void resize();/*aumenta la capacidad del arreglo*/
 public:
     ArrayList();
@@ -32,6 +33,7 @@ public:
     virtual void vaciar();
     
     virtual int getSize();
+    virtual int getPosBusqueda();
     
     //Métodos polimórficos
     virtual std::string toString();

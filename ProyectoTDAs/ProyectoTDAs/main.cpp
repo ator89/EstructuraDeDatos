@@ -259,12 +259,16 @@ void operacionesLista(TDALista* lista){
             else if (opcion == 3){
                 //Buscar Elemento por #cuenta
                 string cuenta = "";
-                cout << "Ingrese el número de cuenta: ";
-                cin >> cuenta;
-                if(lista->buscar(cuenta)== nullptr)
-                    cout << "No existe.\n";
-                else
-                    cout << lista->buscar(cuenta)->toString();
+                if(lista->isEmpty())
+                    cout << "La lista está vacía, nada que buscar.\n";
+                else{
+                    cout << "Ingrese el número de cuenta: ";
+                    cin >> cuenta;
+                    if(lista->buscar(cuenta)== nullptr)
+                        cout << "No existe.\n";
+                    else
+                        cout << lista->getPosBusqueda() << lista->buscar(cuenta)->toString();
+                }
                 MenuP = false;
             }
             else if (opcion == 4){
