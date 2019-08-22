@@ -264,13 +264,18 @@ std::string LinkedList::toString(){
 
 //
 bool LinkedList::equals(Object* obj){
-    if(obj == NULL)
-        return false;
-    else if(typeid(*obj)==typeid(Alumno)){
-        //Alumno* temp = dynamic_cast<Alumno*>(obj);
-        //temp->getNombre();
-        return true;
-    }else{
-        return false;
+    Nodo* temp = head;
+    bool retval = false;
+    while(temp != nullptr){
+        if(obj == NULL)
+            retval = false;
+        else if(typeid(*obj)==typeid(Alumno)){
+            Alumno* alumno = dynamic_cast<Alumno*>(obj);
+            Alumno* cuenta = dynamic_cast<Alumno*>(temp->getData());
+            retval = alumno->getCuenta() == cuenta->getCuenta();
+        }else
+            retval = false;
+        temp = temp->getNext();
     }
+    return retval;
 }

@@ -284,7 +284,8 @@ void operacionesLista(TDALista* lista){
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que borrar.\n";
                 else{
-                    cout << "Ingrese posición: ";
+                    lista->imprimir();
+                    cout << "Ingrese posición para borrar elemento: ";
                     cin >> pos;
                     
                     //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
