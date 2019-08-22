@@ -68,7 +68,7 @@ int main(){
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
             }
             
-            if (opcion == 1){// se va a meter al menu de listas alv compa
+            if (opcion == 1){// se va a meter al menu de listas
                 menuListas(arrayList,linkedList);
                 MenuP = false;//volver a ingresar el menú principal al salir del menú de listas
             }else if (opcion == 2){// se va a meter en pilas
@@ -227,6 +227,8 @@ void operacionesLista(TDALista* lista){
                 cout << "Ingrese la posición: ";
                 cin >> pos;
                 
+                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                
                 if(pos < 1 ){
                     cout << "Fuera de rango, no puede ingresar valores menores a 1 o negativos.\n";
                 }
@@ -247,6 +249,7 @@ void operacionesLista(TDALista* lista){
                     cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
                 }
                 
+                //PEDIR AL USUARIO SEGUIR INGRESANDO DATOS <<-------------------------
                 
                 MenuP = false;
             }else if (opcion == 2){
@@ -283,6 +286,9 @@ void operacionesLista(TDALista* lista){
                 else{
                     cout << "Ingrese posición: ";
                     cin >> pos;
+                    
+                    //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                    
                     if(pos > lista->getSize() || pos <1){
                         cout << "Fuera de rango, elija un elemento dentro de la lista.\n";
                     }else{
@@ -305,6 +311,9 @@ void operacionesLista(TDALista* lista){
                 int pos = 0;
                 cout << "Ingrese posición: ";
                 cin >> pos;
+                
+                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
                 else if(pos <= 0 || pos > lista->getSize()){
@@ -318,6 +327,9 @@ void operacionesLista(TDALista* lista){
                 int pos = 0;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
+                
+                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
                 else if(pos == lista->getSize())
@@ -333,6 +345,9 @@ void operacionesLista(TDALista* lista){
                 int pos = 0;
                 cout << "Ingrese la posición: ";
                 cin >> pos;
+                
+                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
                 else if(pos <= 1)
@@ -385,6 +400,9 @@ void operacionesPila(TDAPila* pila){
                 simbolo = new Simbolo();
                 cout << "Ingrese un símbolo: ";
                 cin >> symbol;
+                
+                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN CARACTER <<-------------------------
+                
                 simbolo->setSimbolo(symbol);
                 pila->push(simbolo);
                 cout << "Símbolo " << symbol << " agregado con éxito a la pila.\n";
