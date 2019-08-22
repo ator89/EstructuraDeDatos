@@ -8,6 +8,7 @@
 
 #include "ArrayList.h"
 #include <iostream>
+#include "Alumno.h"
 
 //Constructor
 ArrayList::ArrayList(){
@@ -80,11 +81,28 @@ void ArrayList::imprimir(){
     }
 }
 
-//1.3 
+//1.3 buscar elemento por número de cuenta
 Object* ArrayList::buscar(std::string data){
-    Object* retval =0;
-    
-    return retval;
+    int i = 0;
+    int pos = 1;
+    posBusqueda = 0;
+    while(i != size){
+        Object* retval = array[i];
+        if(typeid(*retval)==typeid(Alumno)){
+            Alumno* alumno = dynamic_cast<Alumno*>(array[i]);
+            if(data.compare(alumno->getCuenta()) == 0){
+                retval = array[i];
+                posBusqueda = pos;
+                return retval;
+            }
+        }
+        else
+            return nullptr;
+        i++;
+        pos++;
+    }
+
+    return 0;
 }
 
 //1.4 Eliminar elemento
