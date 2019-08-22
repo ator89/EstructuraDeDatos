@@ -42,33 +42,38 @@ int ArrayList::getPosBusqueda(){
 
 //1.1 Insertar en posición n
 void ArrayList::insertar(Object* data, int pos){
+    size++;
     if(size==capacity){//revisar si hay capacidad para el elemento
         resize();
     }
     //insertar al inicio
     if(pos == 1){
-        for(int i = size;i>0;i--){
-            array[i]=array[i-1];
+        for(int i = size; i>0; i--){
+            array[i] = array[i-1];
         }
         array[0] = data;
     }
     //insertar al final
     else if(pos == size){
-        array[size]=data;
+        array[size] = data;
     }
     else{
-        for(int i = size-1; i>=pos;i--)
+        for(int i = size-1; i>=pos; i--)
             array[i+1] = array[i];
         array[pos] = data;
     }
     
-    size++;
 }
 
 //1.2 Imprimir valores de la lista
 void ArrayList::imprimir(){
-    for(int i=size-1; i>=0;i--){
-        std::cout << i <<" - " <<array[i]->toString() + "\n";
+    //for(int i=size-1; i>=0;i--){
+    int i = 0;
+    int pos = 1;
+    while(i != size){
+        std::cout << pos <<" - " <<array[i]->toString() + "\n";
+        i++;
+        pos++;
     }
 }
 
@@ -80,7 +85,8 @@ Object* ArrayList::buscar(std::string data){
 
 //1.4
 Object* ArrayList::borrar(int pos){
-    Object* retval=0;
+    pos--;
+    Object* retval = 0;
     return retval;
 }
 
@@ -91,23 +97,24 @@ bool ArrayList::isEmpty(){
 
 //1.6 Retonar el valor que está en la posición
 Object* ArrayList::posicion(int pos){
+    pos--;
     Object* retval = array[pos];
     return retval;
 }
 
 //1.7 Retornar valor siguiente
 Object* ArrayList::siguiente(int pos){
+    pos--;
     Object* retval = array[pos+1];
     return retval;
 }
 
 //1.8 Retornar valor anterior
 Object* ArrayList::anterior(int pos){
+    pos--;
     Object* retval = array[pos-1];
     return retval;
 }
-
-
 
 //1.9 Vaciar la lista
 void ArrayList::vaciar(){
@@ -120,7 +127,6 @@ void ArrayList::vaciar(){
     }
     size = 0;
 }
-
 
 
 /*aumenta la capacidad del arreglo*/

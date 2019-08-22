@@ -228,7 +228,10 @@ void operacionesLista(TDALista* lista){
                 cin >> pos;
                 
                 if(pos < 1 ){
-                    cout << "Fuera de rango, no puede ingresar valores negativos.\n";
+                    cout << "Fuera de rango, no puede ingresar valores menores a 1 o negativos.\n";
+                }
+                else if(pos > 1 && lista->isEmpty()){
+                    cout << "La lista está vacía, sólo se puede agregar en la primera posición.\n";
                 }
                 else if(pos < 1 || pos > lista->getSize()+1){
                     cout << "Posición inválida, sólo se puede agregar al final de la lista.\n";
@@ -267,7 +270,7 @@ void operacionesLista(TDALista* lista){
                     if(lista->buscar(cuenta)== nullptr)
                         cout << "No existe.\n";
                     else
-                        cout << lista->getPosBusqueda() << lista->buscar(cuenta)->toString();
+                        cout << "Pos: " << lista->getPosBusqueda() << " - " << lista->buscar(cuenta)->toString();
                 }
                 MenuP = false;
             }
