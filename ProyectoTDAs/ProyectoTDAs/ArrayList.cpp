@@ -60,6 +60,7 @@ void ArrayList::insertar(Object* data, int pos){
         array[size-1] = data;
     }
     else{
+        //hacer corrimiento
         for(int i = size-1; i>=pos; i--)
             array[i+1] = array[i];
         array[pos] = data;
@@ -82,14 +83,30 @@ void ArrayList::imprimir(){
 //1.3 
 Object* ArrayList::buscar(std::string data){
     Object* retval =0;
+    
     return retval;
 }
 
-//1.4
+//1.4 Eliminar elemento
 Object* ArrayList::borrar(int pos){
     pos--;
-    Object* retval = 0;
-    return retval;
+    //Borrar del final
+    if(pos == size-1){
+        Object* retval = array[pos];
+        array[size-1]=NULL;
+        size--;
+        return retval;
+    }
+    //borrar de posición n
+    else{
+        Object* retval = array[pos];
+        for(int i=pos; i < size-1; i++){
+            array[i] = array[i+1];
+        }
+        size--;
+        return retval;
+    }
+    
 }
 
 //1.5 Verificar si no está vacía
