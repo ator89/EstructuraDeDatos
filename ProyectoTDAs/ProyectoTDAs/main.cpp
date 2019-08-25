@@ -224,7 +224,7 @@ void operacionesLista(TDALista* lista){
                 //Insertar Alumno
                 int pos = 0;
                 alumno = new Alumno();
-                cout << "Ingrese la posición: ";
+                cout << "Ingrese la posición a insertar alumno: ";
                 cin >> pos;
                 
                 while(1)
@@ -234,7 +234,7 @@ void operacionesLista(TDALista* lista){
                         cin.clear();
                         cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
                         cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
-                        cout << "Ingrese posición para borrar elemento: ";
+                        cout << "Ingrese la posición a insertar alumno: ";
                         cin >> pos;
                     }
                     if(!cin.fail())
@@ -359,15 +359,15 @@ void operacionesLista(TDALista* lista){
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
                 else if(pos <= 0 || pos > lista->getSize()){
-                    cout << "Posicón inválida, intente otra.\n";
+                    cout << "Posición inválida, intente otra.\n";
                 }else
                     cout << lista->posicion(pos)->toString();
                 MenuP = false;
             }
             //Obtener Siguiente
             else if (opcion == 7){
-                
                 int pos = 0;
+                lista->imprimir();
                 cout << "Ingrese la posición para obtener su valor siguiente: ";
                 cin >> pos;
                 
@@ -397,8 +397,8 @@ void operacionesLista(TDALista* lista){
             }
             //Obtener Anterior
             else if (opcion == 8){
-                
                 int pos = 0;
+                lista->imprimir();
                 cout << "Ingrese la posición para obtener su valor anterior: ";
                 cin >> pos;
                 
