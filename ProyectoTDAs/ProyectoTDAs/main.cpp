@@ -5,6 +5,8 @@ using std::endl;
 #include <string>
 using std::string;
 
+#include <limits>
+
 //Importar header de TDAs
 #include "TDALista.h"
 #include "TDACola.h"
