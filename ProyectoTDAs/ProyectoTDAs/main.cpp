@@ -462,6 +462,7 @@ void operacionesLista(TDALista* lista){
 void operacionesPila(TDAPila* pila){
     Simbolo* simbolo = NULL;
     char symbol;
+    string ingreso = "";
     int opcion = 0;
     bool MenuP = false; // bool de menu principal;
     
@@ -484,8 +485,18 @@ void operacionesPila(TDAPila* pila){
                 //Push
                 simbolo = new Simbolo();
                 cout << "Ingrese un símbolo: ";
-                cin >> symbol;
-                
+                cin >> ingreso;
+                while(1){
+                    if(ingreso.length() !=1){
+                        cout << "Ingrese un caracter solamente.\n";
+                        cout << "Ingrese un símbolo: ";
+                        cin >> ingreso;
+                    }else{
+                        symbol = ingreso[0];
+                        break;
+                    }
+                }
+
                 //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN CARACTER <<-------------------------
                 
                 simbolo->setSimbolo(symbol);
