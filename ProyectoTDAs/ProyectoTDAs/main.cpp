@@ -227,7 +227,19 @@ void operacionesLista(TDALista* lista){
                 cout << "Ingrese la posición: ";
                 cin >> pos;
                 
-                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                while(1)
+                {
+                    if(cin.fail())
+                    {
+                        cin.clear();
+                        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                        cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                        cout << "Ingrese posición para borrar elemento: ";
+                        cin >> pos;
+                    }
+                    if(!cin.fail())
+                        break;
+                }
                 
                 if(pos < 1 ){
                     cout << "Fuera de rango, no puede ingresar valores menores a 1 o negativos.\n";
