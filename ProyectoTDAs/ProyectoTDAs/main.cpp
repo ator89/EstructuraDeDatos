@@ -252,13 +252,15 @@ void operacionesLista(TDALista* lista){
                 //PEDIR AL USUARIO SEGUIR INGRESANDO DATOS <<-------------------------
                 
                 MenuP = false;
-            }else if (opcion == 2){
-                //Imprimir Elementos
+            }
+            //Imprimir Elementos
+            else if (opcion == 2){
+                
                 
                 if(lista->isEmpty())
                     cout << "La Lista está vacía, nada que imprimir.\n";
                 else
-                    //cout << "Elementos de la Lista: \n" <<  lista->toString();
+                    cout << "\nElementos de la Lista: \n";
                     lista->imprimir();
                 MenuP = false;
             }
@@ -268,19 +270,18 @@ void operacionesLista(TDALista* lista){
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
                 else{
-                    cout << "Ingrese el número de cuenta: ";
+                    cout << "Ingrese el número de cuenta a buscar: ";
                     cin >> cuenta;
                     if(lista->buscar(cuenta)== nullptr)
                         cout << "No existe.\n";
                     else
-                        cout << "Pos: " << lista->getPosBusqueda() << " - " << lista->buscar(cuenta)->toString();
+                        cout << "Encontrado en posición: " << lista->getPosBusqueda() << " - " << lista->buscar(cuenta)->toString() << "\n";
                 }
                 MenuP = false;
             }
+            //Borrar Elemento
             else if (opcion == 4){
-                //Borrar Elemento
                 int pos = 0;
-                
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que borrar.\n";
                 else{
@@ -303,32 +304,45 @@ void operacionesLista(TDALista* lista){
                             break;
                     }
                     
-                    //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
-                    
                     if(pos > lista->getSize() || pos <1){
                         cout << "Fuera de rango, elija un elemento dentro de la lista.\n";
                     }else{
-                        cout << "Elemento " << lista->borrar(pos)->toString() << " borrado con éxito\n";
+                        cout << "Elemento <" << lista->borrar(pos)->toString() << "> borrado con éxito\n";
                     }
                 }
                 
                 MenuP = false;
-            }
+            }//#4 fin borrar elemento #4
+            
+            //Verificar si la lista está vacía
             else if (opcion == 5){
-                //Ver si está vacía
+                
                 if(lista->isEmpty())
                     cout << "La lista está vacía.\n";
                 else
                     cout << "La lista tiene " << lista->getSize() << " elementos.\n";
                 MenuP = false;
             }
+            //Obtener Elemento por Posición
             else if (opcion == 6){
-                //Obtener Elemento por Posición
+                
                 int pos = 0;
-                cout << "Ingrese posición: ";
+                cout << "Ingrese posición a obtener: ";
                 cin >> pos;
                 
-                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                while(1)
+                {
+                    if(cin.fail())
+                    {
+                        cin.clear();
+                        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                        cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                        cout << "Ingrese posición a obtener: ";
+                        cin >> pos;
+                    }
+                    if(!cin.fail())
+                        break;
+                }
                 
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
@@ -338,13 +352,26 @@ void operacionesLista(TDALista* lista){
                     cout << lista->posicion(pos)->toString();
                 MenuP = false;
             }
+            //Obtener Siguiente
             else if (opcion == 7){
-                //Obtener Siguiente
+                
                 int pos = 0;
-                cout << "Ingrese la posición: ";
+                cout << "Ingrese la posición para obtener su valor siguiente: ";
                 cin >> pos;
                 
-                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
+                while(1)
+                {
+                    if(cin.fail())
+                    {
+                        cin.clear();
+                        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                        cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                        cout << "Ingrese la posición para obtener su valor siguiente: ";
+                        cin >> pos;
+                    }
+                    if(!cin.fail())
+                        break;
+                }
                 
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
@@ -356,14 +383,26 @@ void operacionesLista(TDALista* lista){
                     cout << lista->siguiente(pos)->toString();
                 MenuP = false;
             }
+            //Obtener Anterior
             else if (opcion == 8){
-                //Obtener Anterior
+                
                 int pos = 0;
-                cout << "Ingrese la posición: ";
+                cout << "Ingrese la posición para obtener su valor anterior: ";
                 cin >> pos;
                 
-                //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
-                
+                while(1)
+                {
+                    if(cin.fail())
+                    {
+                        cin.clear();
+                        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                        cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                        cout << "Ingrese la posición para obtener su valor anterior: ";
+                        cin >> pos;
+                    }
+                    if(!cin.fail())
+                        break;
+                }
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que buscar.\n";
                 else if(pos <= 1)
@@ -374,8 +413,8 @@ void operacionesLista(TDALista* lista){
                     cout << lista->anterior(pos)->toString();
                 MenuP = false;
             }
+            //Borrar todos los elementos (anula)
             else if (opcion == 9){
-                //Borrar todos los elementos (anula)
                 if(lista->isEmpty())
                    cout << "La lista está vacía, nada que vaciar.\n";
                 else{
