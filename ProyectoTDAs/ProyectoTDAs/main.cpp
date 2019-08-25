@@ -439,7 +439,7 @@ void operacionesLista(TDALista* lista){
             }
         }
     }
-    delete alumno;
+    //delete alumno;
 }
 
 //Menú de operaciones de Pila
