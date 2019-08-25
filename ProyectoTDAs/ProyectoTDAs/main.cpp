@@ -284,9 +284,24 @@ void operacionesLista(TDALista* lista){
                 if(lista->isEmpty())
                     cout << "La lista está vacía, nada que borrar.\n";
                 else{
+                    
                     lista->imprimir();
                     cout << "Ingrese posición para borrar elemento: ";
                     cin >> pos;
+                    
+                    while(1)
+                    {
+                        if(cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                            cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                            cout << "Ingrese posición para borrar elemento: ";
+                            cin >> pos;
+                        }
+                        if(!cin.fail())
+                            break;
+                    }
                     
                     //VALIDAR POSICIÓN QUE SEA SOLAMENTE UN ENTERO <<-------------------------
                     
