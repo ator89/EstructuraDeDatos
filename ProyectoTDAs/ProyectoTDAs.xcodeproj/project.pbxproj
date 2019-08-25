@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B45D13D2312459B00C2139B /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 0B45D13C2312459B00C2139B /* makefile */; };
 		0B54FC7022F0F1C000B73D08 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC6F22F0F1C000B73D08 /* main.cpp */; };
 		0B54FC7822F0F1F600B73D08 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC7622F0F1F600B73D08 /* Object.cpp */; };
 		0B54FC7B22F0F23400B73D08 /* TDALista.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0B54FC7922F0F23400B73D08 /* TDALista.cpp */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B45D13C2312459B00C2139B /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		0B54FC6C22F0F1C000B73D08 /* ProyectoTDAs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProyectoTDAs; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B54FC6F22F0F1C000B73D08 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0B54FC7622F0F1F600B73D08 /* Object.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		0B54FC6E22F0F1C000B73D08 /* ProyectoTDAs */ = {
 			isa = PBXGroup;
 			children = (
+				0B45D13C2312459B00C2139B /* makefile */,
 				0B54FC6F22F0F1C000B73D08 /* main.cpp */,
 				0B54FC7F22F0F2D700B73D08 /* TDACola.cpp */,
 				0B54FC8022F0F2D700B73D08 /* TDACola.h */,
@@ -198,6 +201,7 @@
 				0B54FC8422F0F32400B73D08 /* Nodo.cpp in Sources */,
 				0B54FC7022F0F1C000B73D08 /* main.cpp in Sources */,
 				0B54FC7E22F0F26800B73D08 /* TDAPila.cpp in Sources */,
+				0B45D13D2312459B00C2139B /* makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
