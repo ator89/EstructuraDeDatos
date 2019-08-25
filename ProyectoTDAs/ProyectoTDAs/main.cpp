@@ -222,46 +222,62 @@ void operacionesLista(TDALista* lista){
             else
                 cout << "¡Opción no válida! Vuelva a intentar.\n"<< endl;
             
+            //Insertar Alumno
             if (opcion == 1){
-                //Insertar Alumno
-                int pos = 0;
-                alumno = new Alumno();
-                cout << "Ingrese la posición a insertar alumno: ";
-                cin >> pos;
                 
-                while(1)
-                {
-                    if(cin.fail())
-                    {
-                        cin.clear();
-                        cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
-                        cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                bool active = true;
+                string opcion = "";
+
+                while(active){
+                    do{
+
+                        int pos = 0;
+                        alumno = new Alumno();
                         cout << "Ingrese la posición a insertar alumno: ";
                         cin >> pos;
-                    }
-                    if(!cin.fail())
-                        break;
-                }
+                        
+                        while(1)
+                        {
+                            if(cin.fail())
+                            {
+                                cin.clear();
+                                cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                                cout << "\nSólo se permiten valores numéricos, intente otra vez.\n"<<endl;
+                                cout << "Ingrese la posición a insertar alumno: ";
+                                cin >> pos;
+                            }
+                            if(!cin.fail())
+                                break;
+                        }
+                        
+                        if(pos < 1 ){
+                            cout << "Fuera de rango, no puede ingresar valores menores a 1 o negativos.\n";
+                        }
+                        else if(pos > 1 && lista->isEmpty()){
+                            cout << "La lista está vacía, sólo se puede agregar en la primera posición.\n";
+                        }
+                        else if(pos < 1 || pos > lista->getSize()+1){
+                            cout << "Posición inválida, sólo se puede agregar al final de la lista.\n";
+                        }
+                        else{
+                            cout << "Ingrese el nombre: ";
+                            cin >> nombre;
+                            cout << "Ingrese el # cuenta: ";
+                            cin >> cuenta;
+                            alumno->setNombre(nombre);
+                            alumno->setCuenta(cuenta);
+                            lista->insertar(alumno,pos);
+                            cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
+                        }
+
+                        cout << "Desea continuar? (s/n)" << endl;
+                        cin >> opcion;
+
+                    }while(opcion != "n");
+                    active = false;
+                }   
                 
-                if(pos < 1 ){
-                    cout << "Fuera de rango, no puede ingresar valores menores a 1 o negativos.\n";
-                }
-                else if(pos > 1 && lista->isEmpty()){
-                    cout << "La lista está vacía, sólo se puede agregar en la primera posición.\n";
-                }
-                else if(pos < 1 || pos > lista->getSize()+1){
-                    cout << "Posición inválida, sólo se puede agregar al final de la lista.\n";
-                }
-                else{
-                    cout << "Ingrese el nombre: ";
-                    cin >> nombre;
-                    cout << "Ingrese el # cuenta: ";
-                    cin >> cuenta;
-                    alumno->setNombre(nombre);
-                    alumno->setCuenta(cuenta);
-                    lista->insertar(alumno,pos);
-                    cout << "Alumno " << nombre << " agregado con éxito a la lista.\n";
-                }
+                
                 
                 //PEDIR AL USUARIO SEGUIR INGRESANDO DATOS <<-------------------------
                 
